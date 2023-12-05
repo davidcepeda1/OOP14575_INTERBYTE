@@ -4,13 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
-            <file>file:/C:/Users/Usuario/Documents/Sebastian/segundo%20semestre/poo/INTERBYTE/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/Order.java</file>
-            <file>file:/C:/Users/Usuario/Documents/Sebastian/segundo%20semestre/poo/INTERBYTE/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/User.java</file>
-=======
+            <file>file:/C:/Users/MSI/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/view/FoodAndRollOrdersSystem.java</file>
             <file>file:/C:/Users/MSI/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/User.java</file>
-            <file>file:/C:/Users/MSI/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/MenuDish.java</file>
-            <file>file:/C:/Users/MSI/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/Menu.java</file>
->>>>>>> fa3fcf3df8f6878cbfaf15a1f513734172fdefe6
+=======
+            <file>file:/C:/Users/Usuario/Documents/Sebastian/segundo%20semestre/poo/INTERBYTE/OOP14575_INTERBYTE/06-Code/02-Code/Food%20and%20Roll%20Orders/src/ec/edu/espe/foodandrollorders/model/Order.java</file>
+>>>>>>> cdf13a07dd7c605bc4c547fe40e260c0c4028b73
         </group>
     </open-files>
 </project-private>
