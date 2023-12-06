@@ -1,11 +1,14 @@
 package ec.edu.espe.foodandrollorders.view;
 
+import ec.edu.espe.foodandrollorders.model.User;
 import java.util.Scanner;
 
 public class FoodAndRollOrdersSystem {
 
     public static void main(String[] args) {
         int i=1;
+        String passworRestaurant="pasword";
+        String pass;
         do{
         System.out.println("********************");
         System.out.println("Bienvenido al restaurante food and roll");
@@ -35,8 +38,16 @@ public class FoodAndRollOrdersSystem {
 
         switch (option) {
             case 1:
-                enterUser();
+                System.out.println("Digite la clave del restaurante");
+                pass=scan.next();
+                
+                if(!pass.equals(passworRestaurant)){
+                    System.out.println("Codigo erroneo");
+                }else{
+                    enterUser();
+                }
                 break;
+
                 
             case 2:
                 enterCustomer();
@@ -52,6 +63,10 @@ public class FoodAndRollOrdersSystem {
     
     public static void enterUser () {
         int option = 0;
+        
+        System.out.println("Ingrese el codigo  de la empresa");
+        
+        
         do{
         do {
             System.out.println("****************");
@@ -79,6 +94,7 @@ public class FoodAndRollOrdersSystem {
         switch (option) {
             case 1:
                 System.out.println("Caso 1 de usurio");
+                registerNewUser();
                 break;
                 
             case 2:
@@ -96,8 +112,31 @@ public class FoodAndRollOrdersSystem {
         }
     
 
+    public static void registerNewUser(){
+        User user=new User();
+        Scanner scan=new Scanner(System.in);
+        char array[];
+        String password;
+        System.out.println("Registro de un nuevo usuario");
+        System.out.println("Elija un Username");
+        user.setUserId(scan.next());
+        scan.nextLine();
+        System.out.println("Elija una constrasena");
+        password=scan.nextLine();
+        
+        array=password.toCharArray();
+        
+        for(var i=0; i<(array.length) ;i++){
+            array[i]=(char)((char)1+array[i]);
+        }
+        
+        user.setPassword(String.valueOf(array));
+        System.out.println("contrasen codificada"+user.getPassword());
+        
+    }
 
-
+    
+    
     public static void enterCustomer(){
         int option = 0;
         do{

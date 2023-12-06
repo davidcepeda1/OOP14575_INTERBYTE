@@ -30,18 +30,8 @@ public class User {
         return "User{" + "userId=" + getUserId() + ", password=" + getPassword() + ", loginStatus=" + getLoginStatus() + ", registerDate=" + getRegisterDate() + '}';
     }
 
-    
-    
-    
-    public void veryfyLogin(){
-        Scanner input =new Scanner(System.in);
-        String userId,password;
-        
-        
-        
-    } 
-
-    /**
+   
+   /**
      * @return the userId
      */
     public String getUserId() {
@@ -95,5 +85,9 @@ public class User {
      */
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
+    }
+
+    public String setUserId() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
