@@ -64,9 +64,6 @@ public class FoodAndRollOrdersSystem {
     public static void enterUser () {
         int option = 0;
         
-        System.out.println("Ingrese el codigo  de la empresa");
-        
-        
         do{
         do {
             System.out.println("****************");
