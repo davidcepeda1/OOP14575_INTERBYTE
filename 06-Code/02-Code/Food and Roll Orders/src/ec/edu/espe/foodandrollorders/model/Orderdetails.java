@@ -13,8 +13,6 @@ public class Orderdetails {
     private float unitCost;
     private float subTotal;
     
-    public void calculatePrice(){
+    
         
     }
-    
-}
