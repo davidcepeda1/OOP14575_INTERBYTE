@@ -1,5 +1,6 @@
 package ec.edu.espe.foodandrollorder.model;
 
+import java.awt.Menu;
 import java.util.Date;
 
 public class RestaurantChef extends User {
