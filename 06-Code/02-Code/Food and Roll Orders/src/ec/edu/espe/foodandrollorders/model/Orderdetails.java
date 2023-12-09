@@ -13,8 +13,8 @@ public class Orderdetails {
     private float unitCost;
     private float subTotal;
     
-    public void calculatePrice(){
-        
+    public void calculatePrice() {
+        // Lógica para calcular el precio total (subTotal)
+        subTotal = quantity * unitCost;
     }
-    
 }
