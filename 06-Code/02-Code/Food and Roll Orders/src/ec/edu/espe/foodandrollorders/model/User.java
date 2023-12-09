@@ -35,6 +35,9 @@ public class User {
      * @return the userId
      */
     public String getUserId() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese el userId");
+        userId=scan.nextLine();
         return userId;
     }
 
@@ -49,6 +52,9 @@ public class User {
      * @return the password
      */
     public String getPassword() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese el password");
+        password=scan.nextLine();
         return password;
     }
 
@@ -77,6 +83,7 @@ public class User {
      * @return the registerDate
      */
     public Date getRegisterDate() {
+        registerDate=new Date();
         return registerDate;
     }
 

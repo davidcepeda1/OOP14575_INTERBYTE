@@ -9,6 +9,9 @@ public class FoodAndRollOrdersSystem {
         int i=1;
         String passworRestaurant="pasword";
         String pass;
+        User user = new User ();
+        
+        
         do{
         System.out.println("********************");
         System.out.println("Bienvenido al restaurante food and roll");
@@ -63,9 +66,6 @@ public class FoodAndRollOrdersSystem {
     
     public static void enterUser () {
         int option = 0;
-        
-        System.out.println("Ingrese el codigo  de la empresa");
-        
         
         do{
         do {
