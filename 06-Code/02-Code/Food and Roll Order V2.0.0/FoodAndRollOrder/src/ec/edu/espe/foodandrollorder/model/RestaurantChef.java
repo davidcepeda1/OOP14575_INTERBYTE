@@ -1,13 +1,40 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.foodandrollorder.model;
 
-/**
- *
- * @author RC_558
- */
-public class RestaurantChef {
+import java.util.Date;
+
+public class RestaurantChef extends User {
+    
+    private String chefName;
+
+    @Override
+    public String toString() {
+        return "RestaurantChef{" + "chefName=" + getChefName() + '}';
+    }
+               
+    public RestaurantChef(String chefName, String userId, String password, String loginStatus, Date registerDate) {
+        super(userId, password, loginStatus, registerDate);
+        this.chefName = chefName;
+    }
+    
+    public Menu checkPendingOrders () {
+        Menu menu = new Menu();
+        return menu;
+    }
+    
+    /**
+     * @return the chefName
+     */
+    public String getChefName() {
+        return chefName;
+    }
+
+    /**
+     * @param chefName the chefName to set
+     */
+    public void setChefName(String chefName) {
+        this.chefName = chefName;
+    }
+
+  
     
 }
