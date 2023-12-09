@@ -3,10 +3,6 @@ package ec.edu.espe.foodandrollorder.model;
 
 import java.util.Date;
 
-/**
- *
- * @author RC_558
- */
 public class User {
     private String userId;
     private String password;
@@ -24,7 +20,7 @@ public class User {
     public String toString() {
         return "User{" + "userId=" + getUserId() + ", password=" + getPassword() + ", loginStatus=" + getLoginStatus() + ", registerDate=" + getRegisterDate() + '}';
     }
-
+    
     /**
      * @return the userId
      */
