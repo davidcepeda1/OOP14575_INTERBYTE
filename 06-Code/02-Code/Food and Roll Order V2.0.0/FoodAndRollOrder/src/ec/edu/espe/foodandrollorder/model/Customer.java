@@ -1,11 +1,4 @@
 
-<<<<<<< HEAD
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-=======
->>>>>>> 07a367e6afe66a5d3c390142f8bcca104cd6b55e
 package ec.edu.espe.foodandrollorder.model;
 
 import java.util.Date;
