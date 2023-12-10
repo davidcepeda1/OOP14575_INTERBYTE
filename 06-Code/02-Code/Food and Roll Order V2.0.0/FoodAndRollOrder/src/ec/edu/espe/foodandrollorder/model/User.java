@@ -3,10 +3,10 @@ package ec.edu.espe.foodandrollorder.model;
 import java.util.Date;
 
 public class User {
-    private String userId;
-    private String password;
-    private String loginStatus;
-    private Date registerDate;
+    protected String userId;
+    protected String password;
+    protected String loginStatus;
+    protected  Date registerDate;
 
     public User(String userId, String password, String loginStatus, Date registerDate) {
         this.userId = userId;

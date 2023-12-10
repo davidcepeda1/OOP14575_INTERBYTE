@@ -1,6 +1,5 @@
 package ec.edu.espe.foodandrollorder.view;
 
-import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
 import java.util.Scanner;
 
@@ -114,11 +113,9 @@ public class FoodAndRollSystem {
         printManager();
         option=validateOptionManager(option);
         switch (option) {
-            case 1:
-                registerManager();
+            case 1:          
                 break;
-            case 2:
-                
+            case 2:            
                 break;
             case 3:
                 
@@ -128,7 +125,7 @@ public class FoodAndRollSystem {
         }
         }
         
-    }
+    }       
     
     public static void chef(){
         
@@ -164,6 +161,7 @@ public class FoodAndRollSystem {
         
     }
     
+    /*
         public static void registerManager(){
             Scanner scan = new Scanner(System.in);
             //Manager manager = new Manager();
@@ -171,10 +169,48 @@ public class FoodAndRollSystem {
             //manager.setName(scan.nextLine());
             System.out.println("Enter Manager enail: ");
             //manager.setEmail(scan.nextLine());
-            
-            //manager.setUserId(scan);
-        
+                      
+                   
     }
+    */        
+    /*
+    public static Manager registerManager (){
+        
+            Scanner register = new Scanner (System.in);
+            Date date = new Date ();
+            System.out.println("Ingrese el nombre:");
+            String name = register.next();
+            System.out.println("Entered the email: ");
+            String email = register.next();
+            System.out.println("Entered user: ");
+            String id = register.next();    
+            System.out.println("password: ");
+            String password = register.next();
+            System.out.println("Status:");
+            String status = register.next();               
+            Manager manager = new Manager (name,email,id,password,status,date);
+            return manager;                               
+        }
+    
+        public static void menuOfRestaurant () {
+            
+           Menu menu = new Menu ();
+           
+           ArrayList<Plate> listPlates = new ArrayList<Plate> ();
+            
+           Plate plate1 = new Plate (1,"Tallarín Especial","Tallarín","Pollo, Lomo, Camarón y verduras",5.60,"Disponible","15 minutos");
+           Plate plate2 = new Plate (2,"Tallarín Salteado con Pollol","Tallarín","Pollo y verduras",5.70,"Disponible","15 minutos");   
+            
+            listPlates.add(plate1);
+            listPlates.add(plate2);
+            
+            menu.setPlateList(listPlates);
+            
+            System.out.println("Tallarín:  "
+                    + menu.getPlateList().toString());
+        }*/
+        
+       
         
 }
 
