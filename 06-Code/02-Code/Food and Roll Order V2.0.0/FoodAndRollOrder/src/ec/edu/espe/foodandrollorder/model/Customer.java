@@ -36,7 +36,7 @@ public class Customer extends User {
        
    }
    
-<<<<<<< HEAD
+
    public Menu showFullMenu () {
        //Menu menu = new Menu();
        //return menu;
@@ -52,7 +52,7 @@ public class Customer extends User {
        //Menu menu = new Menu();
        //return menu;
    }
-=======
+
    //public Menu showFullMenu () {
       // Menu menu = new Menu ();
       // return menu;
@@ -62,7 +62,7 @@ public class Customer extends User {
      //  Menu menu = new Menu ();
       // return menu;
    //}
->>>>>>> 771474aaf7c0ca967ce113f582276401e346a5a1
+
    
     /**
      * @return the customerName

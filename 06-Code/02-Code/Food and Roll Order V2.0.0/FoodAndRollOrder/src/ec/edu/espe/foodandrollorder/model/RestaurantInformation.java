@@ -20,13 +20,16 @@ public class RestaurantInformation {
     }
 
     public void showSpecificLocation() {
-        System.out.println("******************************");
-        System.out.println("     Welcome to the Restaurant");
+        System.out.println("***=======================================***");
+        System.out.println("          Welcome to the Restaurant          ");
+        System.out.println("***=======================================***");
+        System.out.println("            Food and Roll Orders            ");
+        System.out.println("***=======================================***");
         System.out.println("\t" + "Address: " + addressOfRestaurant);
         System.out.println("\t" + "Phone: " + phoneNumberOfRestaurant);
         System.out.println("\t" + "Email: " + emailOfRestaurant);
         System.out.println("\t" + "Location Reference: " + locationReference);
-        System.out.println("*******************************");
+        System.out.println("***=======================================***");
     }
 
     
