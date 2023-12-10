@@ -8,14 +8,14 @@ public class Plate {
     private String description;
     private double price;
     private String availability;
-    private double preparationTime;
+    private String preparationTime;
 
     @Override
     public String toString() {
         return "Plate{" + "Id=" + getId() + ", name=" + getName() + ", category=" + getCategory() + ", description=" + getDescription() + ", price=" + getPrice() + ", availability=" + getAvailability() + ", preparationTime=" + getPreparationTime() + '}';
     }
     
-    public Plate(int Id, String name, String category, String description, double price, String availability, double preparationTime) {
+    public Plate(int Id, String name, String category, String description, double price, String availability, String preparationTime) {
         this.Id = Id;
         this.name = name;
         this.category = category;
@@ -140,14 +140,14 @@ public class Plate {
     /**
      * @return the preparationTime
      */
-    public double getPreparationTime() {
+    public String getPreparationTime() {
         return preparationTime;
     }
 
     /**
      * @param preparationTime the preparationTime to set
      */
-    public void setPreparationTime(double preparationTime) {
+    public void setPreparationTime(String preparationTime) {
         this.preparationTime = preparationTime;
     }
     

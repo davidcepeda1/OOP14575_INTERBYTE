@@ -4,14 +4,18 @@ import java.util.ArrayList;
 
 public class Menu {
     private ArrayList <Plate> plateList;
-
+        
+    public Menu() {
+    }    
+    
     public Menu(ArrayList<Plate> plateList) {
         this.plateList = plateList;
     }
 
     @Override
     public String toString() {
-        return "Menu{" + "plateList=" + getPlateList() + '}';
+        return "Menu:" +
+                "{" + "plate=" + getPlateList() + '}';
     }
 
     /**
