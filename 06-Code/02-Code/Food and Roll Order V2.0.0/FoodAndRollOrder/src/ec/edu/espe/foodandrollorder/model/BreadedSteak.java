@@ -1,13 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.foodandrollorder.model;
 
 /**
  *
- * @author Usuario
+ * @author Sebastian
  */
-public class BreadedSteak {
-    
+public class BreadedSteak extends Plate {
+
+    private boolean isCrispy;
+
+    public BreadedSteak(int id, String name, String description, double price, String availability, String preparationTime, boolean isCrispy) {
+        super(id, name, "Meat", description, price, availability, preparationTime);
+        this.isCrispy = isCrispy;
+    }
+
+    // Puedes anular o agregar métodos según las necesidades específicas de la milanesa
+    @Override
+    public void getDetails() {
+        super.getDetails();
+        System.out.println("Is Crispy: " + isCrispy);
+    }
+
+    public boolean isCrispy() {
+        return isCrispy;
+    }
+
+    public void setCrispy(boolean isCrispy) {
+        this.isCrispy = isCrispy;
+    }
+
+    // Otros métodos específicos de la milanesa si es necesario
 }
