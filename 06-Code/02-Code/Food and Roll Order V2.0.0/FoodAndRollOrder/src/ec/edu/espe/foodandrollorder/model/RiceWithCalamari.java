@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.foodandrollorder.model;
 
 /**
  *
- * @author Usuario
+ * @author Sebastian
  */
-public class RiceWithCalamari {
-    
+public class RiceWithCalamari extends Plate {
+
+    private boolean hasSquidInk;
+
+    public RiceWithCalamari(int id, String name, String description, double price, String availability, double preparationTime, boolean hasSquidInk) {
+        super(id, name, "Seafood", description, price, availability, preparationTime);
+        this.hasSquidInk = hasSquidInk;
+    }
+
+    @Override
+    public void getDetails() {
+        super.getDetails();
+        System.out.println("Has Squid Ink: " + hasSquidInk);
+    }
+
+    public boolean hasSquidInk() {
+        return hasSquidInk;
+    }
+
+    public void setHasSquidInk(boolean hasSquidInk) {
+        this.hasSquidInk = hasSquidInk;
+    }
+
+   
 }
