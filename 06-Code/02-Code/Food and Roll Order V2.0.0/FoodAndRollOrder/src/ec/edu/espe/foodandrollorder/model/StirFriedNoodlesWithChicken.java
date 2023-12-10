@@ -1,13 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ec.edu.espe.foodandrollorder.model;
 
 /**
  *
- * @author Usuario
+ * @author Sebastian
  */
-public class StirFriedNoodlesWithChicken {
-    
+public class StirFriedNoodlesWithChicken extends Plate {
+
+    private boolean hasVegetables;
+
+    public StirFriedNoodlesWithChicken(int id, String name, String description, double price, String availability, double preparationTime, boolean hasVegetables) {
+        super(id, name, "Noodles", description, price, availability, preparationTime);
+        this.hasVegetables = hasVegetables;
+    }
+
+    @Override
+    public void getDetails() {
+        super.getDetails();
+        System.out.println("Has Vegetables: " + hasVegetables);
+    }
+
+    public boolean hasVegetables() {
+        return hasVegetables;
+    }
+
+    public void setHasVegetables(boolean hasVegetables) {
+        this.hasVegetables = hasVegetables;
+    }
+
 }
