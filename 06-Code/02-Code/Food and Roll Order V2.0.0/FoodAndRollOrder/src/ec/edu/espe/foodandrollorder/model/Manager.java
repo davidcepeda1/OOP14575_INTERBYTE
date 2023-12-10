@@ -19,14 +19,14 @@ public class Manager extends User{
     public Manager(String userId, String password, String loginStatus, Date registerDate) {
         super(userId, password, loginStatus, registerDate);
     }
-    
-    
 
     @Override
     public String toString() {
-        return "Manager{" + "name=" + name + ", email=" + email + '}';
+        return  "Manager{" + "name=" + name + ", email=" + email +
+                    ", userid=" + userId + ", password=" + password + ", Status=" + loginStatus + ", Date=" + registerDate + 
+                    "}";
     }
-
+    
     public void addPlate(){
         
     }
