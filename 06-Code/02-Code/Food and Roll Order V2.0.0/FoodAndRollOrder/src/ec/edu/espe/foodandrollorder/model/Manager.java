@@ -1,17 +1,26 @@
 package ec.edu.espe.foodandrollorder.model;
 
+import java.util.Date;
+
 /**
  *
  * @author RC_558
  */
-public class Manager {
+public class Manager extends User{
     private String name;
     private String email;
 
-    public Manager(String name, String email) {
+    public Manager(String name, String email, String userId, String password, String loginStatus, Date registerDate) {
+        super(userId, password, loginStatus, registerDate);
         this.name = name;
         this.email = email;
     }
+
+    public Manager(String userId, String password, String loginStatus, Date registerDate) {
+        super(userId, password, loginStatus, registerDate);
+    }
+    
+    
 
     @Override
     public String toString() {
