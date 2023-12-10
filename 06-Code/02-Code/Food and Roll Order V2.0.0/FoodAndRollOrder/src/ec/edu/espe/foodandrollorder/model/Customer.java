@@ -36,15 +36,15 @@ public class Customer extends User {
        
    }
    
-   public Menu showFullMenu () {
-       Menu menu = new Menu ();
-       return menu;
-   }
+   //public Menu showFullMenu () {
+      // Menu menu = new Menu ();
+      // return menu;
+   //}
    
-   public Menu searchDish () {
-       Menu menu = new Menu ();
-       return menu;
-   }
+   //public Menu searchDish () {
+     //  Menu menu = new Menu ();
+      // return menu;
+   //}
    
     /**
      * @return the customerName
