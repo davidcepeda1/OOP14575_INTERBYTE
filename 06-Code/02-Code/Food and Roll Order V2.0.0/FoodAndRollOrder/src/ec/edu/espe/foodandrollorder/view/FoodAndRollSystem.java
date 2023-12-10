@@ -1,4 +1,3 @@
-
 package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
