@@ -16,9 +16,6 @@ public class Manager extends User{
         this.email = email;
     }
 
-    public Manager(String userId, String password, String loginStatus, Date registerDate) {
-        super(userId, password, loginStatus, registerDate);
-    }
 
     @Override
     public String toString() {
