@@ -2,7 +2,11 @@ package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+<<<<<<< HEAD
 import java.util.Date;
+=======
+import java.time.LocalDate;
+>>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
@@ -10,6 +14,7 @@ public class FoodAndRollSystem {
         try (Scanner scann = new Scanner(System.in)) {
             int option = 0;
             
+<<<<<<< HEAD
             while(option !=4){
                 
                 RestaurantInformation restaurantInfo = new RestaurantInformation(
@@ -28,6 +33,21 @@ public class FoodAndRollSystem {
                             break;
                         }
                         manager();
+=======
+            RestaurantInformation restaurantInfo = new RestaurantInformation(
+                "123 Main St",
+                "555-1234",
+                "info@example.com",
+                "Next to the Park");
+            restaurantInfo.showSpecificLocation();
+            printMenu();
+            option=validateOptionMenu(option);
+        
+            switch (option) {
+                case 1:
+                    if(!validatePasswordRestaurant()){
+                        System.out.println("Incorrect Password");
+>>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
                         break;
                     case 2:
                         if(!validatePasswordRestaurant()){
@@ -36,6 +56,7 @@ public class FoodAndRollSystem {
                         }
                         chef();
                         break;
+<<<<<<< HEAD
                     case 3:
                         customer();
                         break;
@@ -45,11 +66,48 @@ public class FoodAndRollSystem {
                     default:
                         throw new AssertionError();
                 }
+=======
+                    }
+                    chef();
+                    break; 
+                case 3:
+                    
+                    customer();
+                    break;
+                case 4:
+                    System.out.println("Exiting...");;
+                    break;
+                default:
+                    throw new AssertionError();
+>>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
             }
         }
     }
-      
-    private static int validateOptionCenter(int option){
+    
+    public static boolean validatePasswordRestaurant(){
+        Scanner scanner = new Scanner(System.in);
+        String password="Claverestaurante";
+        String enterPassword;
+        
+        boolean passwordCorrect = false;
+        
+        do{
+            System.out.println("Enter the restaurant password: ");
+            enterPassword= scanner.nextLine();
+        
+        if(enterPassword.equals(password)){
+            System.out.println("Correct password. Press Enter to continue...");
+            scanner.nextLine();
+            passwordCorrect = true;
+        }else{
+            System.out.println("Incorrect password.");
+        }
+    }while(!passwordCorrect);
+        return true;
+        
+    }  
+     
+    private static int validateOptionMenu(int option){
             Scanner scanner = new Scanner(System.in);
             do{
                 System.out.println("Select an option:");
@@ -69,7 +127,7 @@ public class FoodAndRollSystem {
         return option;
     }
     
-        private static int validateOptionManager(int option){
+        private static int validateOptionSubMenu(int option){
             Scanner scanner = new Scanner(System.in);
             do{
                 System.out.println("Select to Option");
@@ -88,7 +146,7 @@ public class FoodAndRollSystem {
         return option;
     }
     
-    public static void printUser(){
+    public static void printMenu(){
         System.out.println("1. Select Login to Manager");
         System.out.println("2. Select Login to Chef");
         System.out.println("3. Select Login to Customer");
@@ -104,11 +162,27 @@ public class FoodAndRollSystem {
         System.out.println("3. Exit");
     }
     
+    public static void printChef(){
+        System.out.println("***=======================================***");
+        System.out.println("Chef Option");
+        System.out.println("1. Register new chef");
+        System.out.println("2. Login");
+        System.out.println("3. Exit");
+    }
+    
+    public static void printCustomer(){
+        System.out.println("***=======================================***");
+        System.out.println("Customer Option");
+        System.out.println("1. Register new customer");
+        System.out.println("2. Login");
+        System.out.println("3. Exit");
+    }
+    
     public static void manager(){
         int option = 0;
         while(option!=3){
         printManager();
-        option=validateOptionManager(option);
+        option=validateOptionSubMenu(option);
         switch (option) {
             case 1:   
                 registerManager();
@@ -120,44 +194,77 @@ public class FoodAndRollSystem {
                 break;
             default:
                 throw new AssertionError();
-        }
+            }
         }
         
     }       
     
     public static void chef(){
-        
+        int option = 0;
+        while(option!=3){
+        printChef();
+        option=validateOptionSubMenu(option);
+        switch (option) {
+            case 1:          
+                break;
+            case 2:            
+                break;
+            case 3:
+                
+                break;
+            default:
+                throw new AssertionError();
+            }
+        }
     }
-    
+
     public static void customer(){
         int option = 0;
-        
-        
+        while(option!=3){
+        printCustomer();
+        option=validateOptionSubMenu(option);
+        switch (option) {
+            case 1: 
+                registerNewCustomer();
+                break;
+            case 2:            
+                break;
+            case 3:
+                
+                break;
+            default:
+                throw new AssertionError();
+            }
+        }
     }
     
-    public static boolean validatePasswordRestaurant(){
+    public static void registerNewCustomer(){
+        
         Scanner scanner = new Scanner(System.in);
-        String password="Claverestaurante";
-        String enterPassword;
         
-        boolean passwordCorrect = false;
+        System.out.println("=== We need some information about yourself, please provide us with correct and real data to proceed with the delivery ==");
+        System.out.println("Enter customer name: ");
+        String customerName = scanner.nextLine();
+
+        System.out.println("Enter customer email: ");
+        String customerEmail = scanner.nextLine();
         
-        do{
-            System.out.println("Enter the restaurant password: ");
-            enterPassword= scanner.nextLine();
+        System.out.println("Enter customer phone number: ");
+        String customerPhoneNumber = scanner.nextLine();
         
-        if(enterPassword.equals(password)){
-            System.out.println("Correct password. Press Enter to continue...");
-            scanner.nextLine();
-            passwordCorrect = true;
-        }else{
-            System.out.println("Incorrect password. Press Enter to try again...");
-            scanner.nextLine();
-        }
-    }while(!passwordCorrect);
-        return true;
+        System.out.println("Enter customer address: ");
+        String customerAddress = scanner.nextLine();
         
-    }
+        System.out.println(" == Information for Login ==");
+        System.out.println("Enter customer ID: ");
+        String userId = scanner.nextLine();
+        
+        System.out.println("Enter customer password: ");
+        String password = scanner.nextLine();
+        
+    }    
+    
+   
     
         public static void registerManager(){
             Scanner scan = new Scanner(System.in);
@@ -192,7 +299,7 @@ public class FoodAndRollSystem {
     /*
 
     
-        public static void menuOfRestaurant () {
+  3      public static void menuOfRestaurant () {
             
            Menu menu = new Menu ();
            

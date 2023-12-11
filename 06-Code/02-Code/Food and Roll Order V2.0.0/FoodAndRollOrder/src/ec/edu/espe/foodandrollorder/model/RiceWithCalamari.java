@@ -1,6 +1,8 @@
 
 package ec.edu.espe.foodandrollorder.model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Sebastian
@@ -9,8 +11,8 @@ public class RiceWithCalamari extends Plate {
 
     private boolean hasSquidInk;
 
-    public RiceWithCalamari(int id, String name, String description, double price, String availability, double preparationTime, boolean hasSquidInk) {
-        super(id, name, "Seafood", description, price, availability, preparationTime);
+    public RiceWithCalamari(int id, String name, String description, double price, String availability, LocalDateTime preparationTime, boolean hasSquidInk) {
+        super(id, "name", "Seafood", description, price, availability, preparationTime);
         this.hasSquidInk = hasSquidInk;
     }
 
