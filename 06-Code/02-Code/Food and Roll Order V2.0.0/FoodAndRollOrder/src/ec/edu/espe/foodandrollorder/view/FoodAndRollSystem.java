@@ -1,11 +1,6 @@
 package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
-<<<<<<< HEAD
-import java.util.Date;
-
-=======
->>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -16,30 +11,7 @@ public class FoodAndRollSystem {
         
         while(option !=4){
             
-<<<<<<< HEAD
-            while(option !=4){
-                
-                RestaurantInformation restaurantInfo = new RestaurantInformation(
-                        "123 Main St",
-                        "555-1234",
-                        "info@example.com",
-                        "Next to the Park");
-                restaurantInfo.showSpecificLocation();
-                printMenu();
-                option=validateOptionMenu(option);
-                
-                switch (option) {
-                    case 1:
-                        if(!validatePasswordRestaurant()){
-                            System.out.println("Incorrect Password");
-                            break;
-                        }
-                        manager();
-
-            RestaurantInformation restaurantInfo = new RestaurantInformation(){
-=======
             RestaurantInformation restaurantInfo = new RestaurantInformation(
->>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
                 "123 Main St",
                 "555-1234",
                 "info@example.com",
@@ -49,7 +21,7 @@ public class FoodAndRollSystem {
             option=validateOptionMenu(option);
         
             switch (option) {
-                    case 1:
+                case 1:
                     if(!validatePasswordRestaurant()){
                         System.out.println("Incorrect Password");
                         break;
@@ -60,19 +32,6 @@ public class FoodAndRollSystem {
                     if(!validatePasswordRestaurant()){
                         System.out.println("Incorrect Password");
                         break;
-<<<<<<< HEAD
-                    case 3:
-                        customer();
-                        break;
-                    case 4:
-                        System.out.println("Exiting...");;
-                        break;
-                    default:
-                        throw new AssertionError();
-                }
-
-=======
->>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
                     }
                     chef();
                     break; 
@@ -294,4 +253,3 @@ public class FoodAndRollSystem {
        
         
 }
-
