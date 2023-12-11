@@ -1,6 +1,9 @@
 package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+import ec.edu.espe.foodandrollorder.model.Plate;
+import ec.edu.espe.foodandrollorder.model.Menu;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
@@ -115,7 +118,8 @@ public class FoodAndRollSystem {
         switch (option) {
             case 1:          
                 break;
-            case 2:            
+            case 2:  
+                menuOfRestaurant();
                 break;
             case 3:
                 
@@ -190,25 +194,30 @@ public class FoodAndRollSystem {
             String status = register.next();               
             Manager manager = new Manager (name,email,id,password,status,date);
             return manager;                               
-        }
+        }*/
     
         public static void menuOfRestaurant () {
             
            Menu menu = new Menu ();
            
-           ArrayList<Plate> listPlates = new ArrayList<Plate> ();
+           ArrayList<Plate> listTallarin = new ArrayList<Plate> ();
+           ArrayList<Plate> listMariscos = new ArrayList<Plate> ();
             
-           Plate plate1 = new Plate (1,"Tallarín Especial","Tallarín","Pollo, Lomo, Camarón y verduras",5.60,"Disponible","15 minutos");
-           Plate plate2 = new Plate (2,"Tallarín Salteado con Pollol","Tallarín","Pollo y verduras",5.70,"Disponible","15 minutos");   
+           Plate tallarinPlate1 = new Plate (1,"Tallarín Especial","Tallarín","Pollo, Lomo, Camarón y verduras",5.60,"Disponible","15 minutos");
+           Plate tallarinPlate2 = new Plate (2,"Tallarín Salteado con Pollo","Tallarín","Pollo y verduras",5.70,"Disponible","15 minutos");   
+                        
+           Plate mariscosPlate1 = new Plate (1,"Calamar salteado con Legumbres ","Mariscos","Calamar",5.60,"Sí","15 minutos");
+           Plate mariscosPlate2 = new Plate (2,"Calamar y Camarón salteado con Legumbres","Mariscos","Calamar y Camarón",5.70,"Sí","15 minutos");   
+           
+            listTallarin.add(tallarinPlate1);
+            listTallarin.add(tallarinPlate2);
             
-            listPlates.add(plate1);
-            listPlates.add(plate2);
+            listMariscos.add(mariscosPlate1);
+            listMariscos.add(mariscosPlate2);
             
-            menu.setPlateList(listPlates);
-            
-            System.out.println("Tallarín:  "
-                    + menu.getPlateList().toString());
-        }*/
+            menu.setPlateListTallarin(listTallarin);
+            menu.setPlateListMariscos(listMariscos);                     
+        }
         
        
         

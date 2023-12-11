@@ -3,33 +3,36 @@ package ec.edu.espe.foodandrollorder.model;
 import java.util.ArrayList;
 
 public class Menu {
-    private ArrayList <Plate> plateList;
+    private ArrayList <Plate> plateListTallarin;
+    private ArrayList<Plate> plateListMariscos;
         
     public Menu() {
     }    
-    
-    public Menu(ArrayList<Plate> plateList) {
-        this.plateList = plateList;
+
+    public Menu(ArrayList<Plate> plateListTallarin, ArrayList<Plate> plateListMariscos) {
+        this.plateListTallarin = plateListTallarin;
+        this.plateListMariscos = plateListMariscos;
     }
 
     @Override
     public String toString() {
-        return "Menu:" +
-                "{" + "plate=" + getPlateList() + '}';
+        return "Menu{" + "plateListTallarin=" + plateListTallarin + ", plateListMariscos=" + plateListMariscos + '}';
+    }
+    
+    public ArrayList <Plate> getPlateListTallarin() {
+        return plateListTallarin;
     }
 
-    /**
-     * @return the plateList
-     */
-    public ArrayList <Plate> getPlateList() {
-        return plateList;
+    public void setPlateListTallarin(ArrayList <Plate> plateListTallarin) {
+        this.plateListTallarin = plateListTallarin;
     }
 
-    /**
-     * @param plateList the plateList to set
-     */
-    public void setPlateList(ArrayList <Plate> plateList) {
-        this.plateList = plateList;
+    public ArrayList<Plate> getPlateListMariscos() {
+        return plateListMariscos;
+    }
+
+    public void setPlateListMariscos(ArrayList<Plate> plateListMariscos) {
+        this.plateListMariscos = plateListMariscos;
     }
     
     
