@@ -2,11 +2,9 @@ package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
-<<<<<<< HEAD
 import java.util.Date;
-=======
+
 import java.time.LocalDate;
->>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
@@ -14,7 +12,6 @@ public class FoodAndRollSystem {
         try (Scanner scann = new Scanner(System.in)) {
             int option = 0;
             
-<<<<<<< HEAD
             while(option !=4){
                 
                 RestaurantInformation restaurantInfo = new RestaurantInformation(
@@ -23,8 +20,8 @@ public class FoodAndRollSystem {
                         "info@example.com",
                         "Next to the Park");
                 restaurantInfo.showSpecificLocation();
-                printUser();
-                option=validateOptionCenter(option);
+                printMenu();
+                option=validateOptionMenu(option);
                 
                 switch (option) {
                     case 1:
@@ -33,8 +30,8 @@ public class FoodAndRollSystem {
                             break;
                         }
                         manager();
-=======
-            RestaurantInformation restaurantInfo = new RestaurantInformation(
+
+            RestaurantInformation restaurantInfo = new RestaurantInformation(){
                 "123 Main St",
                 "555-1234",
                 "info@example.com",
@@ -44,10 +41,9 @@ public class FoodAndRollSystem {
             option=validateOptionMenu(option);
         
             switch (option) {
-                case 1:
+                    case 1:
                     if(!validatePasswordRestaurant()){
                         System.out.println("Incorrect Password");
->>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
                         break;
                     case 2:
                         if(!validatePasswordRestaurant()){
@@ -56,7 +52,6 @@ public class FoodAndRollSystem {
                         }
                         chef();
                         break;
-<<<<<<< HEAD
                     case 3:
                         customer();
                         break;
@@ -66,7 +61,7 @@ public class FoodAndRollSystem {
                     default:
                         throw new AssertionError();
                 }
-=======
+
                     }
                     chef();
                     break; 
@@ -79,7 +74,6 @@ public class FoodAndRollSystem {
                     break;
                 default:
                     throw new AssertionError();
->>>>>>> 810de5f62b8cc9c4cacaff40d31df93dfa41c705
             }
         }
     }
