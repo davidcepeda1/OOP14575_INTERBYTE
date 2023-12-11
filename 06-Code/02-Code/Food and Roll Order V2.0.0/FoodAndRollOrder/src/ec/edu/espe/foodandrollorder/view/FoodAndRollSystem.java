@@ -9,7 +9,7 @@ public class FoodAndRollSystem {
         int option = 0;
         
         while(option !=4){
-            clearScreen();
+            
             RestaurantInformation restaurantInfo = new RestaurantInformation(
                 "123 Main St",
                 "555-1234",
@@ -46,12 +46,7 @@ public class FoodAndRollSystem {
         }
         scann.close();
     }
-    
-    private static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
-    
+      
     private static int validateOptionCenter(int option){
             Scanner scanner = new Scanner(System.in);
             do{
