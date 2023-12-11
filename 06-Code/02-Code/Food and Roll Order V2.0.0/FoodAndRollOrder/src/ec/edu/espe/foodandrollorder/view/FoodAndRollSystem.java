@@ -36,7 +36,6 @@ public class FoodAndRollSystem {
                     chef();
                     break; 
                 case 3:
-                    
                     customer();
                     break;
                 case 4:
@@ -149,7 +148,8 @@ public class FoodAndRollSystem {
         printManager();
         option=validateOptionSubMenu(option);
         switch (option) {
-            case 1:          
+            case 1:     
+                registerNewManager();
                 break;
             case 2:            
                 break;
@@ -228,6 +228,8 @@ public class FoodAndRollSystem {
         
     }    
     
+    public static void registerNewManager(){
+    }
         
     /*
 
