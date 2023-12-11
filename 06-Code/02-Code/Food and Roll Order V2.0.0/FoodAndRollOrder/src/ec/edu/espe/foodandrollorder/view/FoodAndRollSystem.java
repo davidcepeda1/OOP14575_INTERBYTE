@@ -1,50 +1,52 @@
 package ec.edu.espe.foodandrollorder.view;
 
+import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+import java.util.Date;
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
     public static void main(String[] args) {
-        Scanner scann = new Scanner(System.in);
-        int option = 0;
-        
-        while(option !=4){
+        try (Scanner scann = new Scanner(System.in)) {
+            int option = 0;
             
-            RestaurantInformation restaurantInfo = new RestaurantInformation(
-                "123 Main St",
-                "555-1234",
-                "info@example.com",
-                "Next to the Park");
-            restaurantInfo.showSpecificLocation();
-            printUser();
-            option=validateOptionCenter(option);
-        
-            switch (option) {
-                case 1:
-                    if(!validatePasswordRestaurant()){
-                        System.out.println("Incorrect Password");
+            while(option !=4){
+                
+                RestaurantInformation restaurantInfo = new RestaurantInformation(
+                        "123 Main St",
+                        "555-1234",
+                        "info@example.com",
+                        "Next to the Park");
+                restaurantInfo.showSpecificLocation();
+                printUser();
+                option=validateOptionCenter(option);
+                
+                switch (option) {
+                    case 1:
+                        if(!validatePasswordRestaurant()){
+                            System.out.println("Incorrect Password");
+                            break;
+                        }
+                        manager();
                         break;
-                    }
-                    manager();
-                    break;
-                case 2:
-                    if(!validatePasswordRestaurant()){
-                        System.out.println("Incorrect Password");
+                    case 2:
+                        if(!validatePasswordRestaurant()){
+                            System.out.println("Incorrect Password");
+                            break;
+                        }
+                        chef();
                         break;
-                    }
-                    chef();
-                    break; 
-                case 3:
-                    customer();
-                    break;
-                case 4:
-                    System.out.println("Exiting...");;
-                    break;
-                default:
-                    throw new AssertionError();
+                    case 3:
+                        customer();
+                        break;
+                    case 4:
+                        System.out.println("Exiting...");;
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
             }
         }
-        scann.close();
     }
       
     private static int validateOptionCenter(int option){
@@ -108,7 +110,8 @@ public class FoodAndRollSystem {
         printManager();
         option=validateOptionManager(option);
         switch (option) {
-            case 1:          
+            case 1:   
+                registerManager();
                 break;
             case 2:            
                 break;
@@ -156,36 +159,38 @@ public class FoodAndRollSystem {
         
     }
     
-    /*
         public static void registerManager(){
             Scanner scan = new Scanner(System.in);
-            //Manager manager = new Manager();
-            System.out.println("Enter Manager name: ");
-            //manager.setName(scan.nextLine());
-            System.out.println("Enter Manager enail: ");
-            //manager.setEmail(scan.nextLine());
-                      
-                   
+            String email = null;
+            String name = null;
+            String userId = null;
+            String password = null;
+            String loginStatus="Active";
+            Date registerDate = new Date();
+            
+            Manager manager = new Manager(name, email, userId, password, loginStatus, registerDate);
+            
+            System.out.println("Ingrese nombre del usuario");
+            name=scan.nextLine();
+            manager.setName(name);
+            System.out.println("Ingrese email");
+            email=scan.nextLine();
+            manager.setEmail(email);
+            System.out.println("Ingrese un usuario");
+            userId=scan.nextLine();
+            manager.setUserId(userId);
+            System.out.println("Ingrese una constrasena");
+            password=scan.nextLine();
+            manager.setPassword(password);
+            manager.setRegisterDate(registerDate);
+            System.out.println("Manager agregado");
+            System.out.println(manager);   
     }
-    */        
-    /*
-    public static Manager registerManager (){
+
+
         
-            Scanner register = new Scanner (System.in);
-            Date date = new Date ();
-            System.out.println("Ingrese el nombre:");
-            String name = register.next();
-            System.out.println("Entered the email: ");
-            String email = register.next();
-            System.out.println("Entered user: ");
-            String id = register.next();    
-            System.out.println("password: ");
-            String password = register.next();
-            System.out.println("Status:");
-            String status = register.next();               
-            Manager manager = new Manager (name,email,id,password,status,date);
-            return manager;                               
-        }
+    /*
+
     
         public static void menuOfRestaurant () {
             
