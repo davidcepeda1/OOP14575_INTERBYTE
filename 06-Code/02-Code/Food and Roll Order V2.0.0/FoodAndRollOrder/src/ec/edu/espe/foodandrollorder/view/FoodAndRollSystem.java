@@ -1,17 +1,22 @@
 package ec.edu.espe.foodandrollorder.view;
 
-import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+<<<<<<< HEAD
 import java.util.Date;
 
+=======
+>>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
 import java.time.LocalDate;
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
     public static void main(String[] args) {
-        try (Scanner scann = new Scanner(System.in)) {
-            int option = 0;
+        Scanner scann = new Scanner(System.in);
+        int option = 0;
+        
+        while(option !=4){
             
+<<<<<<< HEAD
             while(option !=4){
                 
                 RestaurantInformation restaurantInfo = new RestaurantInformation(
@@ -32,6 +37,9 @@ public class FoodAndRollSystem {
                         manager();
 
             RestaurantInformation restaurantInfo = new RestaurantInformation(){
+=======
+            RestaurantInformation restaurantInfo = new RestaurantInformation(
+>>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
                 "123 Main St",
                 "555-1234",
                 "info@example.com",
@@ -45,13 +53,14 @@ public class FoodAndRollSystem {
                     if(!validatePasswordRestaurant()){
                         System.out.println("Incorrect Password");
                         break;
-                    case 2:
-                        if(!validatePasswordRestaurant()){
-                            System.out.println("Incorrect Password");
-                            break;
-                        }
-                        chef();
+                    }
+                    manager();
+                    break;
+                case 2:
+                    if(!validatePasswordRestaurant()){
+                        System.out.println("Incorrect Password");
                         break;
+<<<<<<< HEAD
                     case 3:
                         customer();
                         break;
@@ -62,6 +71,8 @@ public class FoodAndRollSystem {
                         throw new AssertionError();
                 }
 
+=======
+>>>>>>> e6ee1dc63bb6c8a69314a9ea4c735240f203fabc
                     }
                     chef();
                     break; 
@@ -76,6 +87,7 @@ public class FoodAndRollSystem {
                     throw new AssertionError();
             }
         }
+        scann.close();
     }
     
     public static boolean validatePasswordRestaurant(){
@@ -124,7 +136,7 @@ public class FoodAndRollSystem {
         private static int validateOptionSubMenu(int option){
             Scanner scanner = new Scanner(System.in);
             do{
-                System.out.println("Select to Option");
+                System.out.println("Select an option:");
                 
         try {
                 option=scanner.nextInt();
@@ -145,11 +157,11 @@ public class FoodAndRollSystem {
         System.out.println("2. Select Login to Chef");
         System.out.println("3. Select Login to Customer");
         System.out.println("4. Exit");
-        System.out.println("***=======================================***");
+        System.out.println("*=======================================*");
     }
     
     public static void printManager(){
-        System.out.println("***=======================================***");
+        System.out.println("*=======================================*");
         System.out.println("Manager Option");
         System.out.println("1. Register new manager");
         System.out.println("2. Login");
@@ -157,7 +169,7 @@ public class FoodAndRollSystem {
     }
     
     public static void printChef(){
-        System.out.println("***=======================================***");
+        System.out.println("*=======================================*");
         System.out.println("Chef Option");
         System.out.println("1. Register new chef");
         System.out.println("2. Login");
@@ -165,7 +177,7 @@ public class FoodAndRollSystem {
     }
     
     public static void printCustomer(){
-        System.out.println("***=======================================***");
+        System.out.println("*=======================================*");
         System.out.println("Customer Option");
         System.out.println("1. Register new customer");
         System.out.println("2. Login");
@@ -178,8 +190,7 @@ public class FoodAndRollSystem {
         printManager();
         option=validateOptionSubMenu(option);
         switch (option) {
-            case 1:   
-                registerManager();
+            case 1:          
                 break;
             case 2:            
                 break;
@@ -258,37 +269,6 @@ public class FoodAndRollSystem {
         
     }    
     
-   
-    
-        public static void registerManager(){
-            Scanner scan = new Scanner(System.in);
-            String email = null;
-            String name = null;
-            String userId = null;
-            String password = null;
-            String loginStatus="Active";
-            Date registerDate = new Date();
-            
-            Manager manager = new Manager(name, email, userId, password, loginStatus, registerDate);
-            
-            System.out.println("Ingrese nombre del usuario");
-            name=scan.nextLine();
-            manager.setName(name);
-            System.out.println("Ingrese email");
-            email=scan.nextLine();
-            manager.setEmail(email);
-            System.out.println("Ingrese un usuario");
-            userId=scan.nextLine();
-            manager.setUserId(userId);
-            System.out.println("Ingrese una constrasena");
-            password=scan.nextLine();
-            manager.setPassword(password);
-            manager.setRegisterDate(registerDate);
-            System.out.println("Manager agregado");
-            System.out.println(manager);   
-    }
-
-
         
     /*
 
