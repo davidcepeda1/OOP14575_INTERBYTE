@@ -2,6 +2,7 @@ package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+import ec.edu.espe.foodandrollorder.model.User;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
@@ -231,6 +232,9 @@ public class FoodAndRollSystem {
         System.out.println("Enter customer password: ");
         String password = scanner.nextLine();
         
+        Date registerDate = new Date();
+        
+        User user = new User(userId, password, password, registerDate);
         
     }    
     
