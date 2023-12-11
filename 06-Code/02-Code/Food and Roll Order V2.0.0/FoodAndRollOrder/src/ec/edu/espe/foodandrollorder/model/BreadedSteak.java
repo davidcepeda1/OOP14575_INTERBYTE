@@ -1,6 +1,8 @@
 
 package ec.edu.espe.foodandrollorder.model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Sebastian
@@ -9,7 +11,7 @@ public class BreadedSteak extends Plate {
 
     private boolean isCrispy;
 
-    public BreadedSteak(int id, String name, String description, double price, String availability, String preparationTime, boolean isCrispy) {
+    public BreadedSteak(int id, String name, String description, double price, String availability, LocalDateTime preparationTime, boolean isCrispy) {
         super(id, name, "Meat", description, price, availability, preparationTime);
         this.isCrispy = isCrispy;
     }

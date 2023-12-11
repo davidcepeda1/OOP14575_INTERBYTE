@@ -1,6 +1,8 @@
 
 package ec.edu.espe.foodandrollorder.model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Sebastian
@@ -9,7 +11,7 @@ public class GrilledShrimp extends Plate{
     
     private boolean spicy;
     
-    public GrilledShrimp(int id,String name,String description, double price,String availability,double preparationTime,boolean spicy){
+    public GrilledShrimp(int id,String name,String description, double price,String availability,LocalDateTime preparationTime,boolean spicy){
         super(id,name,"Seafood",description,price,availability,preparationTime);
         this.spicy = spicy;
     }

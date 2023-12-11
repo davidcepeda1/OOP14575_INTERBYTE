@@ -1,6 +1,8 @@
 
 package ec.edu.espe.foodandrollorder.model;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author Sebastian
@@ -9,7 +11,7 @@ public class GrilledChicken extends Plate {
 
     private boolean marinated;
 
-    public GrilledChicken(int id, String name, String description, double price, String availability, double preparationTime, boolean marinated) {
+    public GrilledChicken(int id, String name, String description, double price, String availability, LocalDateTime preparationTime, boolean marinated) {
         super(id, name, "Chicken", description, price, availability, preparationTime);
         this.marinated = marinated;
     }

@@ -1,22 +1,24 @@
 package ec.edu.espe.foodandrollorder.model;
 
+import java.time.LocalDateTime;
+
 public class Plate {
     
-    private int Id;
+    private int id;
     private String name;
     private String category;
     private String description;
     private double price;
     private String availability;
-    private String preparationTime;
+    private LocalDateTime preparationTime;
 
     @Override
     public String toString() {
         return "Plate{" + "Id=" + getId() + ", name=" + getName() + ", category=" + getCategory() + ", description=" + getDescription() + ", price=" + getPrice() + ", availability=" + getAvailability() + ", preparationTime=" + getPreparationTime() + '}';
     }
     
-    public Plate(int Id, String name, String category, String description, double price, String availability, String preparationTime) {
-        this.Id = Id;
+    public Plate(int Id, String name, String category, String description, double price, String availability, LocalDateTime preparationTime) {
+        this.id = Id;
         this.name = name;
         this.category = category;
         this.description = description;
@@ -54,17 +56,17 @@ public class Plate {
     }
 
     /**
-     * @return the Id
+     * @return the id
      */
     public int getId() {
-        return Id;
+        return id;
     }
 
     /**
-     * @param Id the Id to set
+     * @param Id the id to set
      */
     public void setId(int Id) {
-        this.Id = Id;
+        this.id = Id;
     }
 
     /**
@@ -140,14 +142,14 @@ public class Plate {
     /**
      * @return the preparationTime
      */
-    public String getPreparationTime() {
+    public LocalDateTime getPreparationTime() {
         return preparationTime;
     }
 
     /**
      * @param preparationTime the preparationTime to set
      */
-    public void setPreparationTime(String preparationTime) {
+    public void setPreparationTime(LocalDateTime preparationTime) {
         this.preparationTime = preparationTime;
     }
     
