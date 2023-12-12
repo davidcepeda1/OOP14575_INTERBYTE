@@ -11,6 +11,7 @@ public class FoodAndRollSystem {
     public static void main(String[] args) {
         Scanner scann = new Scanner(System.in);
         int option = 0;
+        int menuSize;
         
         while(option !=4){
             
@@ -21,7 +22,8 @@ public class FoodAndRollSystem {
                 "Next to the Park");
             restaurantInfo.showSpecificLocation();
             printMenu();
-            option=validateOptionMenu(option);
+            menuSize=4;
+            option=validateOptionMenu(option,menuSize);
         
             switch (option) {
                 case 1:
@@ -74,14 +76,14 @@ public class FoodAndRollSystem {
         
     }  
      
-    private static int validateOptionMenu(int option){
+    private static int validateOptionMenu(int option, int menuSize){
             Scanner scanner = new Scanner(System.in);
             do{
                 System.out.println("Select an option:");
                 
         try {
                 option = scanner.nextInt();
-                if (option != 1 && option != 2 && option !=3 && option !=4) {
+                if (option<=(menuSize-menuSize)||(option>(menuSize))) {
                     System.out.println("Incorrect option, Try Again.");
                 }
 
@@ -90,29 +92,10 @@ public class FoodAndRollSystem {
                 scanner.nextLine();
                 option = 0;
             }
-        } while (option != 1 && option != 2 && option !=3 && option !=4);
+        } while (option<=(menuSize-menuSize)||(option>(menuSize)));
         return option;
     }
-    
-        private static int validateOptionSubMenu(int option){
-            Scanner scanner = new Scanner(System.in);
-            do{
-                System.out.println("Select an option:");
-                
-        try {
-                option=scanner.nextInt();
-                if (option != 1 && option != 2 && option !=3 ) {
-                    System.out.println("Incorrect option, Try Again.");
-                }
-
-            } catch (Exception e) {
-                System.out.println("Enter only numbers: ");
-                scanner.nextLine();
-            }
-        } while (option != 1 && option != 2 && option !=3);
-        return option;
-    }
-    
+ 
     public static void printMenu(){
         System.out.println("1. Select Login to Manager");
         System.out.println("2. Select Login to Chef");
@@ -147,9 +130,11 @@ public class FoodAndRollSystem {
     
     public static void manager(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printManager();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1:     
                 registerNewManager();
@@ -168,9 +153,11 @@ public class FoodAndRollSystem {
     
     public static void chef(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printChef();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1:          
                 break;
@@ -187,9 +174,11 @@ public class FoodAndRollSystem {
 
     public static void customer(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printCustomer();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1: 
                 registerNewCustomer();
@@ -204,8 +193,6 @@ public class FoodAndRollSystem {
             }
         }
     }
-    
-    
     
     
     public static void registerNewCustomer(){
