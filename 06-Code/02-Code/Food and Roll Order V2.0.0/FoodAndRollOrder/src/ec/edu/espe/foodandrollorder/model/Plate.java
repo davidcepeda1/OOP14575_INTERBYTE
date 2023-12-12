@@ -1,32 +1,29 @@
 package ec.edu.espe.foodandrollorder.model;
 
-import java.time.LocalDateTime;
-
 public class Plate {
     
     private int id;
+    private static int nextId = 1;
     private String name;
-    private String category;
     private String description;
     private double price;
     private String availability;
-    private LocalDateTime preparationTime;
+    private  String preparationTime;
 
     @Override
     public String toString() {
-        return "Plate{" + "Id=" + getId() + ", name=" + getName() + ", category=" + getCategory() + ", description=" + getDescription() + ", price=" + getPrice() + ", availability=" + getAvailability() + ", preparationTime=" + getPreparationTime() + '}';
+        return "Plate{" + "id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", availability=" + availability + ", preparationTime=" + preparationTime + '}';
     }
-    
-    public Plate(int Id, String name, String category, String description, double price, String availability, LocalDateTime preparationTime) {
-        this.id = Id;
+
+    public Plate( String name, String description, double price, String availability, String preparationTime) {
+        this.id = nextId++;
         this.name = name;
-        this.category = category;
         this.description = description;
         this.price = price;
         this.availability = availability;
         this.preparationTime = preparationTime;
     }
-        
+      
     public void checkAvaiability () {
         
     }
@@ -55,105 +52,53 @@ public class Plate {
         
     }
 
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * @param Id the id to set
-     */
-    public void setId(int Id) {
-        this.id = Id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    /**
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * @return the category
-     */
-    public String getCategory() {
-        return category;
-    }
-
-    /**
-     * @param category the category to set
-     */
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    /**
-     * @return the description
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * @param description the description to set
-     */
     public void setDescription(String description) {
         this.description = description;
     }
 
-    /**
-     * @return the price
-     */
     public double getPrice() {
         return price;
     }
 
-    /**
-     * @param price the price to set
-     */
     public void setPrice(double price) {
         this.price = price;
     }
 
-    /**
-     * @return the availability
-     */
     public String getAvailability() {
         return availability;
     }
 
-    /**
-     * @param availability the availability to set
-     */
     public void setAvailability(String availability) {
         this.availability = availability;
     }
 
-    /**
-     * @return the preparationTime
-     */
-    public LocalDateTime getPreparationTime() {
+    public String getPreparationTime() {
         return preparationTime;
     }
 
-    /**
-     * @param preparationTime the preparationTime to set
-     */
-    public void setPreparationTime(LocalDateTime preparationTime) {
+    public void setPreparationTime(String preparationTime) {
         this.preparationTime = preparationTime;
     }
-    
-    
-    
+          
 }
 
