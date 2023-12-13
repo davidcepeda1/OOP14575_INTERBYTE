@@ -20,7 +20,7 @@ public class RestaurantInformation {
 
     public void showSpecificLocation() {
         System.out.println("***=======================================***");
-        System.out.println("          Welcome to the Restaurant          ");
+        System.out.println("       Welcome to the Chifa Michelena Restaurant          ");
         System.out.println("***=======================================***");
         System.out.println("            Food and Roll Orders            ");
         System.out.println("***=======================================***");

@@ -1,11 +1,14 @@
 package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Customer;
+import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -18,10 +21,10 @@ public class FoodAndRollSystem {
         while(option !=4){
             
             RestaurantInformation restaurantInfo = new RestaurantInformation(
-                "123 Main St",
+                "Luis Francisco Lopez",
                 "555-1234",
-                "info@example.com",
-                "Next to the Park");
+                "chifamichelena@gmail.com",
+                "Next to the Pichincha Bank");
             restaurantInfo.showSpecificLocation();
             printMenu();
             menuSize=4;
@@ -86,6 +89,11 @@ public class FoodAndRollSystem {
             option = scanner.nextInt();
             if (option < 1 || option > menuSize) {
                 System.out.println("Incorrect option, Try Again.");
+
+                option = scanner.nextInt();
+                if (option<=(menuSize-menuSize)||(option>(menuSize))) {
+                    System.out.println("Incorrect option, Try Again.");
+                }      
             }
         } catch (Exception e) {
             System.out.println("Enter only numbers: ");
@@ -141,7 +149,8 @@ public class FoodAndRollSystem {
             case 1:     
                 registerNewManager();
                 break;
-            case 2:                     
+            case 2:            
+                Manager.managerOptions();
                 break;
             case 3:
                 
