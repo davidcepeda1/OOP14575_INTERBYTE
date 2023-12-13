@@ -22,8 +22,8 @@ public class Menu {
   
     public Menu menuOfRestaurant () {
                                         
-           Plate tallarinPlate1 = new Plate ("Tallarín Especial","Pollo, Lomo, Camarón y verduras",5.60,"SI","10 min");
-           Plate tallarinPlate2 = new Plate ("Tallarín Salteado con Pollo","Pollo y verduras",5.70,"SI","5 min");   
+           Plate tallarinPlate1 = new Plate ("Tallarin Especial","Pollo, Lomo, Camaron y verduras",5.60,"SI","10 min");
+           Plate tallarinPlate2 = new Plate ("Tallarin Salteado con Pollo","Pollo y verduras",5.70,"SI","5 min");   
                         
            Plate mariscosPlate1 = new Plate ("Calamar salteado con Legumbres ","Calamar",5.60,"Sí","5min");
            Plate mariscosPlate2 = new Plate ("Calamar y Camarón salteado con Legumbres","Calamar y Camarón",5.70,"Sí","10min");   
@@ -39,11 +39,11 @@ public class Menu {
         }
     
     public void displayFullMenu() {
-             System.out.println("======== Menú de Tallarines ========");
+             System.out.println("======== Menu de Tallarines ========");
              System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
              displayMenu(plateListTallarin);
 
-             System.out.println("\n======== Menú de Mariscos ========");
+             System.out.println("\n======== Menu de Mariscos ========");
              System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
              displayMenu(plateListMariscos);
           }

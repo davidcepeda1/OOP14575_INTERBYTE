@@ -1,8 +1,11 @@
 package ec.edu.espe.foodandrollorder.view;
 
-import ec.edu.espe.foodandrollorder.model.Manager;
+import ec.edu.espe.foodandrollorder.model.Customer;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
-import ec.edu.espe.foodandrollorder.model.User;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -75,25 +78,25 @@ public class FoodAndRollSystem {
         
     }  
      
-    private static int validateOptionMenu(int option, int menuSize){
-            Scanner scanner = new Scanner(System.in);
-            do{
-                System.out.println("Select an option:");
-                
+    private static int validateOptionMenu(int option, int menuSize) {
+    Scanner scanner = new Scanner(System.in);
+    do {
+        System.out.println("Select an option:");
         try {
-                option = scanner.nextInt();
-                if (option<=(menuSize-menuSize)||(option>(menuSize))) {
-                    System.out.println("Incorrect option, Try Again.");
-                }
-
-            } catch (Exception e) {
-                System.out.println("Enter only numbers: ");
-                scanner.nextLine();
-                option = 0;
+            option = scanner.nextInt();
+            if (option < 1 || option > menuSize) {
+                System.out.println("Incorrect option, Try Again.");
             }
-        } while (option<=(menuSize-menuSize)||(option>(menuSize)));
-        return option;
-    }
+        } catch (Exception e) {
+            System.out.println("Enter only numbers: ");
+            scanner.nextLine();
+            option = 0;
+        }
+    } while (option < 1 || option > menuSize);
+    return option;
+}
+
+
  
     public static void printMenu(){
         System.out.println("1. Select Login to Manager");
@@ -171,27 +174,29 @@ public class FoodAndRollSystem {
         }
     }
 
-    public static void customer(){
-        int option = 0;
-        int menuSize;
-        while(option!=3){
+    public static void customer() {
+    int option = 0;
+    int menuSize;
+    do {
         printCustomer();
-        menuSize=3;
-        option=validateOptionMenu(option,menuSize);
+        menuSize = 3;
+        option = validateOptionMenu(option, menuSize);
         switch (option) {
-            case 1: 
+            case 1:
                 registerNewCustomer();
                 break;
-            case 2:            
+            case 2:
+                validateCustomerLogin();
                 break;
             case 3:
-                
+                System.out.println("Exiting...");
                 break;
             default:
-                throw new AssertionError();
-            }
+                System.out.println("Invalid option. Try again.");
         }
-    }
+    } while (option != 3);
+}
+
     
     
     public static void registerNewCustomer(){
@@ -218,10 +223,56 @@ public class FoodAndRollSystem {
         System.out.println("Enter customer password: ");
         String password = scanner.nextLine();
         
-        Date registerDate = new Date();
+        Customer customer = new Customer(customerName, customerEmail, customerPhoneNumber, null, userId, password, "active", new Date());
+        saveToCSV(customer);
         
-        
-    }    
+    }
+    
+     private static void saveToCSV(Customer customer) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("customers.csv", true))) {
+            if (customer != null) {
+                writer.println(customer.toCSV());
+                System.out.println("Customer registered successfully!");
+            }
+        } catch (IOException e) {
+            System.err.println("Error registering Customer: " + e.getMessage());
+        }
+    }
+     
+    public static boolean validateLogin(String enteredUserId, String enteredPassword) {
+        ArrayList<Customer> customers;
+        customers = Customer.readCustomersFromCSV("customers.csv");
+
+    for (Customer customer : customers) {
+        if (customer.validateLogin(enteredUserId, enteredPassword)) {
+            return true; 
+        }
+    }
+
+    return false; 
+}
+
+   private static boolean validateCustomerLogin() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter customer ID: ");
+        String enteredUserId = scanner.nextLine();
+
+        System.out.println("Enter customer password: ");
+        String enteredPassword = scanner.nextLine();
+
+        ArrayList<Customer> customers = Customer.readCustomersFromCSV("customers.csv");
+
+    for (Customer customer : customers) {
+        if (customer.validateLogin(enteredUserId, enteredPassword)) {
+            System.out.println("Login successful for customer: " + customer.getCustomerName());
+            return true; 
+        }
+    }
+
+        System.out.println("Login failed. No matching customer found.");
+        return false;
+}
     
     public static void registerNewManager(){
 
@@ -248,6 +299,8 @@ public class FoodAndRollSystem {
         
         Manager manager= new Manager(managerName, managerEmail, userId, password, "Active", registerDate);
         */
-        
+
+    
+
     }
         
