@@ -37,7 +37,7 @@ public class Manager extends User{
         switch (option) {
             case 1:        
                 manager.addNewPlateOptions();               
-                menuOfRestaurant.displayFullMenu();
+                //menuOfRestaurant.displayFullMenu();
                 break;
             case 2:           
                 removePlateOptions(manager);
@@ -46,7 +46,7 @@ public class Manager extends User{
                 manager.updatePrices(manager);
                 break;
             case 4:
-                System.out.println("Exiting...");
+                System.out.println("Saliendo...");
                 break;
             default:
                 throw new AssertionError();
@@ -69,7 +69,7 @@ public class Manager extends User{
                     addMariscosPlate();
                     break;
                 case 3:
-                    System.out.println("Exiting...");
+                    System.out.println("Saliendo...");
                     break;
                 default:
                     throw new AssertionError();
@@ -87,12 +87,12 @@ public class Manager extends User{
             switch (option) {
                 case 1:       
                   menuOfRestaurant.displayFullMenu();
-                  System.out.println("Enter the plate ID to remove: ");
+                  System.out.println("Ingrese el ID del plato que quiere eliminar: ");
                   int plateId = scanner.nextInt();
                   manager.removePlateById(plateId);
                     break;
                 case 2:
-                System.out.println("Exiting...");                   
+                System.out.println("Saliendo...");                   
                     break;
                 default:
                     throw new AssertionError();
@@ -103,40 +103,40 @@ public class Manager extends User{
             
                   
     public static void printManagerOptions () {
-        System.out.println("*================Manager Options=======================*");
-        System.out.println("1. Add new dish");
-        System.out.println("2. Remove dish");
-        System.out.println("3. Update Prices");
+        System.out.println("*================Opciones del Administrador=======================*");
+        System.out.println("1. Agregar un plato nuevo");
+        System.out.println("2. Eliminar un plato");
+        System.out.println("3. Actualizar precios");
         System.out.println("3. Exit");
     }
     
      public static void printAddNewPlateOptions () {
-        System.out.println("*================Add New Plate Options=======================*");
-        System.out.println("1. Add new dish in the Tallarin category ");
-        System.out.println("2. Add new dish in the Mariscos category ");
-        System.out.println("3. Return");
+        System.out.println("*================Opciones de Agregar un Nuevo Plato=======================*");
+        System.out.println("1. Agrgar un nuevo plato a la categoria Tallarines ");
+        System.out.println("2. Agrgar un nuevo plato a la categoria Mariscos ");
+        System.out.println("3. Regresar");
     }
      
      public static void printremovePlateOptions () {
-        System.out.println("*================Remove Plate Options=======================*");
-        System.out.println("1. Remove dish in the Tallarin category ");
-        System.out.println("2. Remove dish in the Mariscos category ");
-        System.out.println("3. Return");
+        System.out.println("*================Opciones de Eliminar un Plato=======================*");
+        System.out.println("1. Eliminar un plato de la categoria Tallarines ");
+        System.out.println("2. Eliminar un plato de la categoria  Mariscos ");
+        System.out.println("3. Regresar");
     }
     
          private static int validateOptionMenu(int option){
             Scanner scanner = new Scanner(System.in);
             do{
-                System.out.println("Select an option:");
+                System.out.println("Seleccione una opcion:");
                 
             try {
                     option=scanner.nextInt();
                     if (option != 1 && option != 2 && option !=3 ) {
-                        System.out.println("Incorrect option, Try Again.");
+                        System.out.println("Opcion incorrecta, ingrese solo numeros.");
                     }
 
                 } catch (Exception e) {
-                    System.out.println("Enter only numbers: ");
+                    System.out.println("Ingrese solo numeros: ");
                     scanner.nextLine();
                 }
             } while (option != 1 && option != 2 && option !=3);
@@ -146,16 +146,16 @@ public class Manager extends User{
             private static int validateOptionSubMenu(int option){
                 Scanner scanner = new Scanner(System.in);
                 do{
-                    System.out.println("Select an option:");
+                    System.out.println("Seleccione una opcion:");
 
                 try {
                         option=scanner.nextInt();
                         if (option != 1 && option != 2  ) {
-                            System.out.println("Incorrect option, Try Again.");
+                            System.out.println("Opcion incorrecta, intente otra vez.");
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Enter only numbers: ");
+                        System.out.println("Ingrese solo numeros: ");
                         scanner.nextLine();
                     }
                 } while (option != 1 && option != 2 );
@@ -188,9 +188,19 @@ public class Manager extends User{
         String name = scanner.nextLine();
         System.out.println("Ingrese  la descripción del nuevo plato: ");
         String description = scanner.nextLine();
-        System.out.println("Ingrece el precio del nuevo plato: ");
-        double price = scanner.nextDouble();
-        scanner.nextLine();
+        
+        double price = 0;
+        boolean validPrice = false;
+        while (!validPrice) {
+            try {
+                System.out.println("Ingrese el precio del nuevo plato: ");
+                price = Double.parseDouble(scanner.nextLine());
+                validPrice = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Por favor, ingrese solo números para el precio.");
+            }
+         }
+        
         System.out.println("Ingrese un la disponibilidad (SI o NO) : ");
         String availability = scanner.nextLine();
         System.out.println("Ingrese el tiempo de preparación del nuevo plato en minutos: ");
@@ -204,13 +214,33 @@ public class Manager extends User{
     public void updatePrices(Manager manager) {
         manager.menuOfRestaurant.displayFullMenu();
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Ingrese el ID del plato cuyo precio desea actualizar: ");
-        int plateIdToUpdate = scanner.nextInt();
-
+        
+        int plateIdToUpdate = 0;
+             boolean validId = false;
+             while (!validId) {
+                 try {
+                     System.out.println("Ingrese el ID del plato cuyo precio desea actualizar: ");
+                     plateIdToUpdate = Integer.parseInt(scanner.nextLine());
+                     validId = true;
+                 } catch (NumberFormatException e) {
+                     System.out.println("Por favor, ingrese solo números para el ID del plato.");
+                 }
+            }        
+             
         Plate plateToUpdate = manager.menuOfRestaurant.getPlateById(plateIdToUpdate);
-        if (plateToUpdate != null) {
-            System.out.println("Ingrese el nuevo precio del plato: ");
-            double newPrice = scanner.nextDouble();
+               if (plateToUpdate != null) {
+                   double newPrice = 0;
+                   boolean validNewPrice = false;
+                   while (!validNewPrice) {
+                       try {
+                           System.out.println("Ingrese el nuevo precio del plato: ");
+                           newPrice = Double.parseDouble(scanner.nextLine());
+                           validNewPrice = true;
+                       } catch (NumberFormatException e) {
+                           System.out.println("Por favor, ingrese solo números para el nuevo precio.");
+                         }
+                 }
+
             plateToUpdate.updatePrice(newPrice);
             System.out.println("Precio actualizado exitosamente a: " + plateToUpdate.getPrice());
         } else {
