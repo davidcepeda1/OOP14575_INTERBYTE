@@ -234,7 +234,6 @@ public class FoodAndRollSystem {
         
         Date registerDate = new Date();
         
-        User user = new User(userId, password, password, registerDate);
         
     }    
     
