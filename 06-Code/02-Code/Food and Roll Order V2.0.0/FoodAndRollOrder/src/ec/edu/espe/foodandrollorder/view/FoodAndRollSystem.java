@@ -3,7 +3,6 @@ package ec.edu.espe.foodandrollorder.view;
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
 import ec.edu.espe.foodandrollorder.model.User;
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -11,6 +10,7 @@ public class FoodAndRollSystem {
     public static void main(String[] args) {
         Scanner scann = new Scanner(System.in);
         int option = 0;
+        int menuSize;
         
         while(option !=4){
             
@@ -21,7 +21,8 @@ public class FoodAndRollSystem {
                 "Next to the Park");
             restaurantInfo.showSpecificLocation();
             printMenu();
-            option=validateOptionMenu(option);
+            menuSize=4;
+            option=validateOptionMenu(option,menuSize);
         
             switch (option) {
                 case 1:
@@ -42,7 +43,7 @@ public class FoodAndRollSystem {
                     customer();
                     break;
                 case 4:
-                    System.out.println("Exiting...");;
+                    System.out.println("Exiting...");
                     break;
                 default:
                     throw new AssertionError();
@@ -74,14 +75,14 @@ public class FoodAndRollSystem {
         
     }  
      
-    private static int validateOptionMenu(int option){
+    private static int validateOptionMenu(int option, int menuSize){
             Scanner scanner = new Scanner(System.in);
             do{
                 System.out.println("Select an option:");
                 
         try {
                 option = scanner.nextInt();
-                if (option != 1 && option != 2 && option !=3 && option !=4) {
+                if (option<=(menuSize-menuSize)||(option>(menuSize))) {
                     System.out.println("Incorrect option, Try Again.");
                 }
 
@@ -90,29 +91,10 @@ public class FoodAndRollSystem {
                 scanner.nextLine();
                 option = 0;
             }
-        } while (option != 1 && option != 2 && option !=3 && option !=4);
+        } while (option<=(menuSize-menuSize)||(option>(menuSize)));
         return option;
     }
-    
-        private static int validateOptionSubMenu(int option){
-            Scanner scanner = new Scanner(System.in);
-            do{
-                System.out.println("Select an option:");
-                
-        try {
-                option=scanner.nextInt();
-                if (option != 1 && option != 2 && option !=3 ) {
-                    System.out.println("Incorrect option, Try Again.");
-                }
-
-            } catch (Exception e) {
-                System.out.println("Enter only numbers: ");
-                scanner.nextLine();
-            }
-        } while (option != 1 && option != 2 && option !=3);
-        return option;
-    }
-    
+ 
     public static void printMenu(){
         System.out.println("1. Select Login to Manager");
         System.out.println("2. Select Login to Chef");
@@ -147,14 +129,16 @@ public class FoodAndRollSystem {
     
     public static void manager(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printManager();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1:     
                 registerNewManager();
                 break;
-            case 2:            
+            case 2:                     
                 break;
             case 3:
                 
@@ -168,13 +152,15 @@ public class FoodAndRollSystem {
     
     public static void chef(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printChef();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1:          
                 break;
-            case 2:            
+            case 2:                  
                 break;
             case 3:
                 
@@ -187,9 +173,11 @@ public class FoodAndRollSystem {
 
     public static void customer(){
         int option = 0;
+        int menuSize;
         while(option!=3){
         printCustomer();
-        option=validateOptionSubMenu(option);
+        menuSize=3;
+        option=validateOptionMenu(option,menuSize);
         switch (option) {
             case 1: 
                 registerNewCustomer();
@@ -204,8 +192,6 @@ public class FoodAndRollSystem {
             }
         }
     }
-    
-    
     
     
     public static void registerNewCustomer(){
@@ -238,6 +224,10 @@ public class FoodAndRollSystem {
     }    
     
     public static void registerNewManager(){
+
+    }                
+
+/*
         Scanner scanner = new Scanner(System.in);
         
         System.out.println("=== We need some information about yourself==");
@@ -257,31 +247,7 @@ public class FoodAndRollSystem {
         Date registerDate = new Date();
         
         Manager manager= new Manager(managerName, managerEmail, userId, password, "Active", registerDate);
-        
+        */
         
     }
         
-    /*
-
-    
-  3      public static void menuOfRestaurant () {
-            
-           Menu menu = new Menu ();
-           
-           ArrayList<Plate> listPlates = new ArrayList<Plate> ();
-            
-           Plate plate1 = new Plate (1,"Tallarín Especial","Tallarín","Pollo, Lomo, Camarón y verduras",5.60,"Disponible","15 minutos");
-           Plate plate2 = new Plate (2,"Tallarín Salteado con Pollol","Tallarín","Pollo y verduras",5.70,"Disponible","15 minutos");   
-            
-            listPlates.add(plate1);
-            listPlates.add(plate2);
-            
-            menu.setPlateList(listPlates);
-            
-            System.out.println("Tallarín:  "
-                    + menu.getPlateList().toString());
-        }*/
-        
-       
-        
-}
