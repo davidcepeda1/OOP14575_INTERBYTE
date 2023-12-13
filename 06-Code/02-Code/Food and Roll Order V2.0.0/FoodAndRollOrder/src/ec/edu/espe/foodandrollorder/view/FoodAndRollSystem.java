@@ -1,6 +1,9 @@
 package ec.edu.espe.foodandrollorder.view;
 
+import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+import ec.edu.espe.foodandrollorder.model.User;
+import java.util.Date;
 import java.util.Scanner;
 
 public class FoodAndRollSystem {
@@ -38,7 +41,7 @@ public class FoodAndRollSystem {
                     customer();
                     break;
                 case 4:
-                    System.out.println("Exiting...");;
+                    System.out.println("Exiting...");
                     break;
                 default:
                     throw new AssertionError();
@@ -201,6 +204,9 @@ public class FoodAndRollSystem {
         }
     }
     
+    
+    
+    
     public static void registerNewCustomer(){
         
         Scanner scanner = new Scanner(System.in);
@@ -225,8 +231,37 @@ public class FoodAndRollSystem {
         System.out.println("Enter customer password: ");
         String password = scanner.nextLine();
         
+        Date registerDate = new Date();
+        
+        User user = new User(userId, password, password, registerDate);
+        
     }    
     
     public static void registerNewManager(){
+
     }                
-}
+
+/*
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("=== We need some information about yourself==");
+        System.out.println("Enter manager name: ");
+        String managerName = scanner.nextLine();
+
+        System.out.println("Enter manager email: ");
+        String managerEmail = scanner.nextLine();
+        
+        System.out.println(" == Information for Login ==");
+        System.out.println("Enter manager ID: ");
+        String userId = scanner.nextLine();
+        
+        System.out.println("Enter manager password: ");
+        String password = scanner.nextLine();
+        
+        Date registerDate = new Date();
+        
+        Manager manager= new Manager(managerName, managerEmail, userId, password, "Active", registerDate);
+        */
+        
+    }
+        

@@ -32,12 +32,13 @@ public class Plate {
         
     }
     
-    public void updatePrieces () {
-        
+    public void updatePrice (double newPrice) {
+        this.price = newPrice;
+        System.out.println("Precio actualizado exitosamente a: " + this.price);
     }
     
-    public void updateAvailability () {
-        
+    public void updateAvailability (String newAvailability) {
+        this.availability = newAvailability;
     }
     
     public void modifyDescription () {

@@ -27,20 +27,24 @@ public class Manager extends User{
         this.menuOfRestaurant = new Menu (new ArrayList<>(),new ArrayList<>());
     }
     
-        public static void managerFunctions(){
+        public static void managerOptions(){
+        Manager manager = new Manager("nombre", "email", "userId", "password", "loginStatus", new Date());
         int option = 0;
-        while(option!=3){
-        printManagerFuctions();
+        while(option!=4){
+        printManagerOptions();
         option=validateOptionMenu(option);
         switch (option) {
             case 1:        
-                addNewPlateOptions();
+                manager.addNewPlateOptions();
                 break;
             case 2:           
-                
+                removePlateOptions(manager);
                 break;
             case 3:
-                
+                manager.updatePrices(manager);
+                break;
+            case 4:
+                System.out.println("Exiting...");
                 break;
             default:
                 throw new AssertionError();
@@ -49,18 +53,20 @@ public class Manager extends User{
         
         }       
             
-        public static void addNewPlateOptions(){
+        public void addNewPlateOptions(){
             
             int option = 0;
             while(option!=3){
             printAddNewPlateOptions();           
             switch (option) {
-                case 1:                                     
+                case 1:      
+                    addTallarinPlate();
                     break;
-                case 2:                     
+                case 2:      
+                    addMariscosPlate();
                     break;
                 case 3:
-
+                    
                     break;
                 default:
                     throw new AssertionError();
@@ -69,19 +75,19 @@ public class Manager extends User{
         
         }       
         
-         public static void removePlateOptions(){
-            
+         public static void removePlateOptions(Manager manager){            
             int option = 0;
-            while(option!=3){
+            Scanner scanner = new Scanner (System.in);
+            while(option!=2){
             printremovePlateOptions();           
             switch (option) {
                 case 1:       
-                   
+                  manager.menuOfRestaurant.displayFullMenu();
+                  System.out.println("Enter the plate ID to remove: ");
+                  int plateId = scanner.nextInt();
+                  manager.removePlateById(plateId);
                     break;
-                case 2:                     
-                    break;
-                case 3:
-
+                case 2:
                     break;
                 default:
                     throw new AssertionError();
@@ -91,11 +97,12 @@ public class Manager extends User{
         }       
             
                   
-    public static void printManagerFuctions () {
+    public static void printManagerOptions () {
         System.out.println("*================Manager Options=======================*");
         System.out.println("1. Add new dish");
         System.out.println("2. Remove dish");
-        System.out.println("3. Return");
+        System.out.println("3. Update Prices");
+        System.out.println("3. Exit");
     }
     
      public static void printAddNewPlateOptions () {
@@ -129,14 +136,30 @@ public class Manager extends User{
                 }
             } while (option != 1 && option != 2 && option !=3);
             return option;
-    }
+         }
          
             
-    public Plate addTallarinPlate() {
+    public void addTallarinPlate() {        
+        Plate addedPlate = registerNewPlate();
+        menuOfRestaurant.addPlateToListTallarin(addedPlate);
+        System.out.println("Plato añadido exitosamente a la categoría Tallarín");
+    }
+    
+    public void addMariscosPlate() {
+        Plate addedPlate = registerNewPlate();
+        menuOfRestaurant.addPlateToListMariscos(addedPlate);
+        System.out.println("Plato añadido exitosamente a la categoría Mariscos");
+    }
+    
+    public void removePlateById(int plateId){                 
+        menuOfRestaurant.removePlateById(plateId);
+        System.out.println("Plato eliminado exitosamente.");         
+    }
+    
+    public Plate registerNewPlate() {
+        Scanner scanner = new Scanner (System.in);
         
-        Scanner scanner = new Scanner (System.in); 
-        
-        System.out.println("*================ Add Plate =======================*");
+        System.out.println("*================Agregar Plato Nuevo =======================*");
         System.out.println("Ingrese el nombre del nuevo plato: ");
         String name = scanner.next();
         System.out.println("Ingrese  la descripción del nuevo plato: ");
@@ -148,18 +171,28 @@ public class Manager extends User{
         System.out.println("Ingrese el tiempo de preparación del nuevo plato en minutos: ");
         String preparationTime = scanner.next();
         System.out.println("Plato agrefado exitosamente");
+        Plate addedPlate = new Plate (name,description,price,availability,preparationTime); 
         
-        Plate addedPlate = new Plate (name,description,price,availability,preparationTime);        
-        menuOfRestaurant.addPlateToListTallarin(addedPlate);
         return addedPlate;
     }
-    
-    public void removePlateById(int plateId){
-                 
-        menuOfRestaurant.removePlateById(plateId);
-        System.out.println("Plato eliminado exitosamente.");         
+                
+    public void updatePrices(Manager manager) {
+        manager.menuOfRestaurant.displayFullMenu();
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el ID del plato cuyo precio desea actualizar: ");
+        int plateIdToUpdate = scanner.nextInt();
+
+        Plate plateToUpdate = manager.menuOfRestaurant.getPlateById(plateIdToUpdate);
+        if (plateToUpdate != null) {
+            System.out.println("Ingrese el nuevo precio del plato: ");
+            double newPrice = scanner.nextDouble();
+            plateToUpdate.updatePrice(newPrice);
+            System.out.println("Precio actualizado exitosamente a: " + plateToUpdate.getPrice());
+        } else {
+            System.out.println("ID del plato no existe");
+        }
     }
-    
+
     public String getName() {
         return name;
     }

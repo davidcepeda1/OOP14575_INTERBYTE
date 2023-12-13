@@ -37,15 +37,53 @@ public class Menu {
             Menu menuOfRestaurant = new Menu(plateListTallarin, plateListMariscos);                          
             return menuOfRestaurant;
         }
+    
+    public void displayFullMenu() {
+             System.out.println("======== Menú de Tallarines ========");
+             System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
+             displayMenu(plateListTallarin);
+
+             System.out.println("\n======== Menú de Mariscos ========");
+             System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
+             displayMenu(plateListMariscos);
+          }
+
+    private void displayMenu(ArrayList<Plate> plateList) {
+        for (Plate plate : plateList) {
+            System.out.printf("%d\t%s\t\t%s\t\t%.2f\t\t%s\t\t%s\n",
+                    plate.getId(), plate.getName(), plate.getDescription(), plate.getPrice(),
+                    plate.getAvailability(), plate.getPreparationTime());
+        }
+    }
         
          public void addPlateToListTallarin(Plate plate) {
              this.plateListTallarin.add(plate);
+         }
+         
+         public void addPlateToListMariscos(Plate plate) {
+             this.plateListMariscos.add(plate);
          }
          
          public void removePlateById(int plateId) {
             plateListTallarin.removeIf(plate -> plate.getId() == plateId);
             plateListMariscos.removeIf(plate -> plate.getId() == plateId);
         }
+         
+        public Plate getPlateById(int plateId) {            
+            for (Plate plate : plateListTallarin) {
+                if (plate.getId() == plateId) {
+                    return plate;
+                }
+            }
+
+            for (Plate plate : plateListMariscos) {
+                if (plate.getId() == plateId) {
+                    return plate;
+                }
+            }
+
+            return null;
+        }      
          
         public ArrayList <Plate> getPlateListTallarin() {
             return plateListTallarin;
