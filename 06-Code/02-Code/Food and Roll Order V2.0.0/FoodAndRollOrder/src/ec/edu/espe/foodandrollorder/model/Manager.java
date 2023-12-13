@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class Manager extends User{
     private String name;
     private String email;
-    private Menu menuOfRestaurant;
+    private static Menu menuOfRestaurant;
     
     @Override
     public String toString() {
@@ -24,7 +24,8 @@ public class Manager extends User{
         super(userId, password, loginStatus, registerDate);
         this.name = name;
         this.email = email;        
-        this.menuOfRestaurant = new Menu (new ArrayList<>(),new ArrayList<>());
+        this.menuOfRestaurant = new Menu ();
+        this.menuOfRestaurant.menuOfRestaurant();
     }
     
         public static void managerOptions(){
@@ -35,7 +36,8 @@ public class Manager extends User{
         option=validateOptionMenu(option);
         switch (option) {
             case 1:        
-                manager.addNewPlateOptions();
+                manager.addNewPlateOptions();               
+                menuOfRestaurant.displayFullMenu();
                 break;
             case 2:           
                 removePlateOptions(manager);
@@ -57,7 +59,8 @@ public class Manager extends User{
             
             int option = 0;
             while(option!=3){
-            printAddNewPlateOptions();           
+            printAddNewPlateOptions(); 
+            option = validateOptionMenu(option);
             switch (option) {
                 case 1:      
                     addTallarinPlate();
@@ -66,7 +69,7 @@ public class Manager extends User{
                     addMariscosPlate();
                     break;
                 case 3:
-                    
+                    System.out.println("Exiting...");
                     break;
                 default:
                     throw new AssertionError();
@@ -76,18 +79,20 @@ public class Manager extends User{
         }       
         
          public static void removePlateOptions(Manager manager){            
-            int option = 0;
+            int option = 0;            
             Scanner scanner = new Scanner (System.in);
             while(option!=2){
-            printremovePlateOptions();           
+            printremovePlateOptions();         
+            option = validateOptionSubMenu(option);
             switch (option) {
                 case 1:       
-                  manager.menuOfRestaurant.displayFullMenu();
+                  menuOfRestaurant.displayFullMenu();
                   System.out.println("Enter the plate ID to remove: ");
                   int plateId = scanner.nextInt();
                   manager.removePlateById(plateId);
                     break;
                 case 2:
+                System.out.println("Exiting...");                   
                     break;
                 default:
                     throw new AssertionError();
@@ -138,6 +143,25 @@ public class Manager extends User{
             return option;
          }
          
+            private static int validateOptionSubMenu(int option){
+                Scanner scanner = new Scanner(System.in);
+                do{
+                    System.out.println("Select an option:");
+
+                try {
+                        option=scanner.nextInt();
+                        if (option != 1 && option != 2  ) {
+                            System.out.println("Incorrect option, Try Again.");
+                        }
+
+                    } catch (Exception e) {
+                        System.out.println("Enter only numbers: ");
+                        scanner.nextLine();
+                    }
+                } while (option != 1 && option != 2 );
+                return option;
+             }
+         
             
     public void addTallarinPlate() {        
         Plate addedPlate = registerNewPlate();
@@ -161,15 +185,16 @@ public class Manager extends User{
         
         System.out.println("*================Agregar Plato Nuevo =======================*");
         System.out.println("Ingrese el nombre del nuevo plato: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.println("Ingrese  la descripción del nuevo plato: ");
-        String description = scanner.next();
+        String description = scanner.nextLine();
         System.out.println("Ingrece el precio del nuevo plato: ");
         double price = scanner.nextDouble();
-        System.out.println("Ingrese un la disponiblidad (SI o NO) : ");
-        String availability = scanner.next();
+        scanner.nextLine();
+        System.out.println("Ingrese un la disponibilidad (SI o NO) : ");
+        String availability = scanner.nextLine();
         System.out.println("Ingrese el tiempo de preparación del nuevo plato en minutos: ");
-        String preparationTime = scanner.next();
+        String preparationTime = scanner.nextLine();
         System.out.println("Plato agrefado exitosamente");
         Plate addedPlate = new Plate (name,description,price,availability,preparationTime); 
         

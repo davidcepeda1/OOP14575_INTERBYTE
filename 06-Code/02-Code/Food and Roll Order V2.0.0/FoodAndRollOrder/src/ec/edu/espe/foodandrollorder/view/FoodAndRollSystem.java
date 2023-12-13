@@ -88,8 +88,7 @@ public class FoodAndRollSystem {
 
             } catch (Exception e) {
                 System.out.println("Enter only numbers: ");
-                scanner.nextLine();
-                option = 0;
+                scanner.nextLine();               
             }
         } while (option<=(menuSize-menuSize)||(option>(menuSize)));
         return option;
@@ -138,7 +137,8 @@ public class FoodAndRollSystem {
             case 1:     
                 registerNewManager();
                 break;
-            case 2:                     
+            case 2:            
+                Manager.managerOptions();
                 break;
             case 3:
                 

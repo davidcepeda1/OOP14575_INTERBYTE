@@ -13,48 +13,70 @@ public class Menu {
                 "Mariscos=" + plateListMariscos 
                 + '}';
     }        
-    
-    
+        
     public Menu(ArrayList<Plate> plateListTallarin, ArrayList<Plate> plateListMariscos) {
         this.plateListTallarin = plateListTallarin;
         this.plateListMariscos = plateListMariscos;
     }
   
+     public Menu() {
+        this.plateListTallarin = new ArrayList<>();
+        this.plateListMariscos = new ArrayList<>();
+    }
+
     public Menu menuOfRestaurant () {
-                                        
-           Plate tallarinPlate1 = new Plate ("Tallarín Especial","Pollo, Lomo, Camarón y verduras",5.60,"SI","10 min");
-           Plate tallarinPlate2 = new Plate ("Tallarín Salteado con Pollo","Pollo y verduras",5.70,"SI","5 min");   
+           
+           Menu menuOfRestaurant = new Menu ();                             
+           
+           Plate tallarinPlate1 = new Plate ("Tallarin y legumbres 1","Pollo,Lomo,Camarón",5.60,"SI","10 min");
+           Plate tallarinPlate2 = new Plate ("Tallarin y legumbres 2","Pollo, verduras",5.70,"SI","5 min");   
+           Plate tallarinPlate3 = new Plate ("Tallarin y legumbres 3","Camarón,verduras",5.70,"SI","5 min");
+           Plate tallarinPlate4 = new Plate ("Tallarin y legumbres 4","Tallarin y verduras",5.70,"SI","5 min");
                         
-           Plate mariscosPlate1 = new Plate ("Calamar salteado con Legumbres ","Calamar",5.60,"Sí","5min");
-           Plate mariscosPlate2 = new Plate ("Calamar y Camarón salteado con Legumbres","Calamar y Camarón",5.70,"Sí","10min");   
+           Plate mariscosPlate1 = new Plate ("Mariscos y Legumbres 1","Calamar y verduras",6.80,"Sí","5 min");
+           Plate mariscosPlate2 = new Plate ("Mariscos y Legumbres 2","Calamar y Camarón",7.80,"Sí","5 min");   
+           Plate mariscosPlate3 = new Plate ("Mariscos y Legumbres 3","Calamar y Camarón",8.50,"Sí","5 min");   
            
             plateListTallarin.add(tallarinPlate1);
             plateListTallarin.add(tallarinPlate2);
+            plateListTallarin.add(tallarinPlate3);
+            plateListTallarin.add(tallarinPlate4);
             
             plateListMariscos.add(mariscosPlate1);
             plateListMariscos.add(mariscosPlate2);
+            plateListMariscos.add(mariscosPlate3);
             
-            Menu menuOfRestaurant = new Menu(plateListTallarin, plateListMariscos);                          
+           menuOfRestaurant.setPlateListTallarin(plateListTallarin);
+           menuOfRestaurant.setPlateListMariscos(plateListMariscos);
+                                             
             return menuOfRestaurant;
         }
     
-    public void displayFullMenu() {
-             System.out.println("======== Menú de Tallarines ========");
-             System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
-             displayMenu(plateListTallarin);
+        public void displayFullMenu() {
+           System.out.println("======== Menú de Tallarines ========");
+           displayHeader();
+           displayMenu(plateListTallarin);
 
-             System.out.println("\n======== Menú de Mariscos ========");
-             System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
-             displayMenu(plateListMariscos);
-          }
+           System.out.println("\n======== Menú de Mariscos ========");
+           displayHeader();
+           displayMenu(plateListMariscos);
+         }
 
-    private void displayMenu(ArrayList<Plate> plateList) {
-        for (Plate plate : plateList) {
-            System.out.printf("%d\t%s\t\t%s\t\t%.2f\t\t%s\t\t%s\n",
-                    plate.getId(), plate.getName(), plate.getDescription(), plate.getPrice(),
-                    plate.getAvailability(), plate.getPreparationTime());
-        }
-    }
+       private void displayHeader() {
+           System.out.println("---------------------------------------------------------------------------------------------");
+           System.out.printf("| %-3s | %-20s | %-40s | %-10s | %-15s | %-20s |\n",
+                   "ID", "Nombre", "Descripción", "Precio", "Disponibilidad", "Tiempo de preparación");
+           System.out.println("---------------------------------------------------------------------------------------------");
+         }
+
+       private void displayMenu(ArrayList<Plate> plateList) {
+           for (Plate plate : plateList) {
+               System.out.printf("| %-3d | %-20s | %-40s | %-10.2f | %-15s | %-20s |\n",
+                       plate.getId(), plate.getName(), plate.getDescription(), plate.getPrice(),
+                       plate.getAvailability(), plate.getPreparationTime());
+           }
+           System.out.println("---------------------------------------------------------------------------------------------");
+         }
         
          public void addPlateToListTallarin(Plate plate) {
              this.plateListTallarin.add(plate);
