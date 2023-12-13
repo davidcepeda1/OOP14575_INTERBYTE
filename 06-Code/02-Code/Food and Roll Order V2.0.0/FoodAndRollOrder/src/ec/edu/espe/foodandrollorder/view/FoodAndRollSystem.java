@@ -2,7 +2,6 @@ package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
-import ec.edu.espe.foodandrollorder.model.User;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -15,10 +14,10 @@ public class FoodAndRollSystem {
         while(option !=4){
             
             RestaurantInformation restaurantInfo = new RestaurantInformation(
-                "123 Main St",
+                "Luis Francisco López",
                 "555-1234",
-                "info@example.com",
-                "Next to the Park");
+                "chifamichelena@gmail.com",
+                "Next to the Pichincha Bank");
             restaurantInfo.showSpecificLocation();
             printMenu();
             menuSize=4;

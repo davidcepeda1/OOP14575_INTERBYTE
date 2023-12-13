@@ -46,7 +46,7 @@ public class Manager extends User{
                 manager.updatePrices(manager);
                 break;
             case 4:
-                System.out.println("Saliendo...");
+                System.out.println("Exiting...");
                 break;
             default:
                 throw new AssertionError();
@@ -69,7 +69,7 @@ public class Manager extends User{
                     addMariscosPlate();
                     break;
                 case 3:
-                    System.out.println("Saliendo...");
+                    System.out.println("Exiting...");
                     break;
                 default:
                     throw new AssertionError();
@@ -87,12 +87,12 @@ public class Manager extends User{
             switch (option) {
                 case 1:       
                   menuOfRestaurant.displayFullMenu();
-                  System.out.println("Ingrese el ID del plato que quiere eliminar: ");
+                  System.out.println("Enter the plate ID to remove: ");
                   int plateId = scanner.nextInt();
                   manager.removePlateById(plateId);
                     break;
                 case 2:
-                System.out.println("Saliendo...");                   
+                System.out.println("Exiting...");                   
                     break;
                 default:
                     throw new AssertionError();
@@ -103,40 +103,40 @@ public class Manager extends User{
             
                   
     public static void printManagerOptions () {
-        System.out.println("*================Opciones del Administrador=======================*");
-        System.out.println("1. Agregar un plato nuevo");
-        System.out.println("2. Eliminar un plato");
-        System.out.println("3. Actualizar precios");
+        System.out.println("*================Manager Options=======================*");
+        System.out.println("1. Add new dish");
+        System.out.println("2. Remove dish");
+        System.out.println("3. Update Prices");
         System.out.println("3. Exit");
     }
     
      public static void printAddNewPlateOptions () {
-        System.out.println("*================Opciones de Agregar un Nuevo Plato=======================*");
-        System.out.println("1. Agrgar un nuevo plato a la categoria Tallarines ");
-        System.out.println("2. Agrgar un nuevo plato a la categoria Mariscos ");
-        System.out.println("3. Regresar");
+        System.out.println("*================Add New Plate Options=======================*");
+        System.out.println("1. Add new dish in the Tallarin category ");
+        System.out.println("2. Add new dish in the Mariscos category ");
+        System.out.println("3. Return");
     }
      
      public static void printremovePlateOptions () {
-        System.out.println("*================Opciones de Eliminar un Plato=======================*");
-        System.out.println("1. Eliminar un plato de la categoria Tallarines ");
-        System.out.println("2. Eliminar un plato de la categoria  Mariscos ");
-        System.out.println("3. Regresar");
+        System.out.println("*================Remove Plate Options=======================*");
+        System.out.println("1. Remove dish in the Tallarin category ");
+        System.out.println("2. Remove dish in the Mariscos category ");
+        System.out.println("3. Return");
     }
     
          private static int validateOptionMenu(int option){
             Scanner scanner = new Scanner(System.in);
             do{
-                System.out.println("Seleccione una opcion:");
+                System.out.println("Select an option:");
                 
             try {
                     option=scanner.nextInt();
                     if (option != 1 && option != 2 && option !=3 ) {
-                        System.out.println("Opcion incorrecta, ingrese solo numeros.");
+                        System.out.println("Incorrect option, Try Again.");
                     }
 
                 } catch (Exception e) {
-                    System.out.println("Ingrese solo numeros: ");
+                    System.out.println("Enter only numbers: ");
                     scanner.nextLine();
                 }
             } while (option != 1 && option != 2 && option !=3);
@@ -146,16 +146,16 @@ public class Manager extends User{
             private static int validateOptionSubMenu(int option){
                 Scanner scanner = new Scanner(System.in);
                 do{
-                    System.out.println("Seleccione una opcion:");
+                    System.out.println("Select an option:");
 
                 try {
                         option=scanner.nextInt();
                         if (option != 1 && option != 2  ) {
-                            System.out.println("Opcion incorrecta, intente otra vez.");
+                            System.out.println("Incorrect option, Try Again.");
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Ingrese solo numeros: ");
+                        System.out.println("Enter only numbers: ");
                         scanner.nextLine();
                     }
                 } while (option != 1 && option != 2 );
@@ -166,46 +166,46 @@ public class Manager extends User{
     public void addTallarinPlate() {        
         Plate addedPlate = registerNewPlate();
         menuOfRestaurant.addPlateToListTallarin(addedPlate);
-        System.out.println("Plato añadido exitosamente a la categoría Tallarín");
+        System.out.println("Dish successfully added to the Tallarines category");
     }
     
     public void addMariscosPlate() {
         Plate addedPlate = registerNewPlate();
         menuOfRestaurant.addPlateToListMariscos(addedPlate);
-        System.out.println("Plato añadido exitosamente a la categoría Mariscos");
+        System.out.println("Dish successfully added to the Mariscos category");
     }
     
     public void removePlateById(int plateId){                 
         menuOfRestaurant.removePlateById(plateId);
-        System.out.println("Plato eliminado exitosamente.");         
+        System.out.println("Successfully removed dish.");         
     }
     
     public Plate registerNewPlate() {
         Scanner scanner = new Scanner (System.in);
         
-        System.out.println("*================Agregar Plato Nuevo =======================*");
-        System.out.println("Ingrese el nombre del nuevo plato: ");
+        System.out.println("*================Add New Dish=======================*");
+        System.out.println("Enter the name of the new dish: ");
         String name = scanner.nextLine();
-        System.out.println("Ingrese  la descripción del nuevo plato: ");
+        System.out.println("Enter the description of the new dish: ");
         String description = scanner.nextLine();
         
         double price = 0;
         boolean validPrice = false;
         while (!validPrice) {
             try {
-                System.out.println("Ingrese el precio del nuevo plato: ");
+                System.out.println("Enter the price of the new plate: ");
                 price = Double.parseDouble(scanner.nextLine());
                 validPrice = true;
             } catch (NumberFormatException e) {
-                System.out.println("Por favor, ingrese solo números para el precio.");
+                System.out.println("Please enter only numbers for the price.");
             }
          }
         
-        System.out.println("Ingrese un la disponibilidad (SI o NO) : ");
+        System.out.println("Enter availability (YES or NO) : ");
         String availability = scanner.nextLine();
-        System.out.println("Ingrese el tiempo de preparación del nuevo plato en minutos: ");
+        System.out.println("Enter the preparation time of the new dish in minutes: ");
         String preparationTime = scanner.nextLine();
-        System.out.println("Plato agrefado exitosamente");
+        System.out.println("Dish added successfully");
         Plate addedPlate = new Plate (name,description,price,availability,preparationTime); 
         
         return addedPlate;
@@ -219,11 +219,11 @@ public class Manager extends User{
              boolean validId = false;
              while (!validId) {
                  try {
-                     System.out.println("Ingrese el ID del plato cuyo precio desea actualizar: ");
+                     System.out.println("Enter the ID of the dish whose price you want to update: ");
                      plateIdToUpdate = Integer.parseInt(scanner.nextLine());
                      validId = true;
                  } catch (NumberFormatException e) {
-                     System.out.println("Por favor, ingrese solo números para el ID del plato.");
+                     System.out.println("Please enter only numbers for the dish ID.");
                  }
             }        
              
@@ -233,18 +233,18 @@ public class Manager extends User{
                    boolean validNewPrice = false;
                    while (!validNewPrice) {
                        try {
-                           System.out.println("Ingrese el nuevo precio del plato: ");
+                           System.out.println("Enter the new price of the dish: ");
                            newPrice = Double.parseDouble(scanner.nextLine());
                            validNewPrice = true;
                        } catch (NumberFormatException e) {
-                           System.out.println("Por favor, ingrese solo números para el nuevo precio.");
+                           System.out.println("Please enter only numbers for the new price.");
                          }
                  }
 
             plateToUpdate.updatePrice(newPrice);
-            System.out.println("Precio actualizado exitosamente a: " + plateToUpdate.getPrice());
+            System.out.println("Price successfully updated to: " + plateToUpdate.getPrice());
         } else {
-            System.out.println("ID del plato no existe");
+            System.out.println("Dish ID does not exist");
         }
     }
 
