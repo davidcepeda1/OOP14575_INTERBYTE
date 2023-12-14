@@ -36,14 +36,21 @@ public class Manager extends User{
         option=validateOptionMenu(option);
         switch (option) {
             case 1:        
-                manager.addNewPlateOptions();               
-                //menuOfRestaurant.displayFullMenu();
+                manager.addNewPlateOptions();                       
                 break;
             case 2:           
                 removePlateOptions(manager);
                 break;
             case 3:
                 manager.updatePrices(manager);
+                menuOfRestaurant.saveMenuAsJson("menu.json");
+                Menu menuFromJson = manager.getMenuOfRestaurant().readMenuFromJson("menu.json");
+                if (menuFromJson != null) {
+                    System.out.println("JSON file read successfully. Menu content:");
+                    menuFromJson.displayFullMenu();
+                } else {
+                    System.out.println("Error reading JSON file or no content found.");
+                }                                
                 break;
             case 4:
                 System.out.println("Exiting...");
