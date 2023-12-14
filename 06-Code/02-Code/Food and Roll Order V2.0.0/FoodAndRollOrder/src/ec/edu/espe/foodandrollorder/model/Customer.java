@@ -53,14 +53,10 @@ public class Customer extends User {
                 case 2:
                     cart.addDishToCart();
                     break;
-                case 3:             
+                case 3:     
+                    cart.viewCartDetails();
                     break;
                 case 4:
-                   cart.viewCartDetails();
-                    break;
-                case 5:
-                    break;
-                case 6:
                     System.out.println("Exiting...");
                     break;
                 default:
@@ -109,10 +105,8 @@ public class Customer extends User {
         System.out.println("*================Customer Options=======================*");
         System.out.println("1. Show Full Menu");
         System.out.println("2. Add Dish To Menu");
-        System.out.println("3. Remove Dish To Menu");
-        System.out.println("4. View Cart Details");
-        System.out.println("5. Generate Order");
-        System.out.println("6. Return");
+        System.out.println("3. View Cart Details");
+        System.out.println("4. Return");
     }
 
     private static int validateMenuCustomer(int option) {
@@ -122,7 +116,7 @@ public class Customer extends User {
 
             try {
                 option = scanner.nextInt();
-                if (option != 1 && option != 2 && option != 3 && option != 4 && option != 5 && option != 6) {
+                if (option != 1 && option != 2 && option != 3 && option != 4 ) {
                     System.out.println("Incorrect option, Try Again.");
                 }
 
@@ -130,7 +124,7 @@ public class Customer extends User {
                 System.out.println("Enter only numbers: ");
                 scanner.nextLine();
             }
-        } while (option != 1 && option != 2 && option != 3 && option != 4 && option != 5 && option != 6);
+        } while (option != 1 && option != 2 && option != 3 && option != 4 );
         return option;
     }
 
