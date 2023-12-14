@@ -33,8 +33,7 @@ public class Plate {
     }
     
     public void updatePrice (double newPrice) {
-        this.price = newPrice;
-        System.out.println("Precio actualizado exitosamente a: " + this.price);
+        this.price = newPrice;        
     }
     
     public void updateAvailability (String newAvailability) {

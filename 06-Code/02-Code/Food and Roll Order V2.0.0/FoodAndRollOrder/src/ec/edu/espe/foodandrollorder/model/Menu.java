@@ -32,36 +32,46 @@ public class Menu {
 
     public Menu menuOfRestaurant() {
 
-        Menu menuOfRestaurant = new Menu();
-
-        Plate tallarinPlate1 = new Plate("Tallarin Especial", "Pollo, Lomo, Camaron y verduras", 5.60, "SI", "10 min");
-        Plate tallarinPlate2 = new Plate("Tallarin Salteado con Pollo", "Pollo y verduras", 5.70, "SI", "5 min");
-        Plate tallarinPlate3 = new Plate("Tallarin y legumbres 3", "Camarón,verduras", 5.70, "SI", "5 min");
-        Plate tallarinPlate4 = new Plate("Tallarin y legumbres 4", "Tallarin y verduras", 5.70, "SI", "5 min");
-        plateListTallarin.add(tallarinPlate1);
-        plateListTallarin.add(tallarinPlate2);
-        plateListTallarin.add(tallarinPlate3);
-        plateListTallarin.add(tallarinPlate4);
-
-        menuOfRestaurant.setPlateListTallarin(plateListTallarin);
-
-        return menuOfRestaurant;
+ Menu menuOfRestaurant = new Menu ();                             
+           
+           Plate tallarinPlate1 = new Plate ("Tallarin y legumbres1","Pollo,Lomo,Camarón",5.60,"SI","10 min");
+           Plate tallarinPlate2 = new Plate ("Tallarin y legumbres 2","Pollo, verduras",5.70,"SI","5 min");   
+           Plate tallarinPlate3 = new Plate ("Tallarin y legumbres 3","Camarón,verduras",5.70,"SI","5 min");
+           Plate tallarinPlate4 = new Plate ("Tallarin y legumbres 4","Tallarin y verduras",5.70,"SI","5 min");
+                        
+           Plate mariscosPlate1 = new Plate ("Mariscos y Legumbres 1","Calamar y verduras",6.80,"Sí","5 min");
+           Plate mariscosPlate2 = new Plate ("Mariscos y Legumbres 2","Calamar y Camarón",7.80,"Sí","5 min");   
+           Plate mariscosPlate3 = new Plate ("Mariscos y Legumbres 3","Calamar y Camarón",8.50,"Sí","5 min");   
+           
+            plateListTallarin.add(tallarinPlate1);
+            plateListTallarin.add(tallarinPlate2);
+            plateListTallarin.add(tallarinPlate3);
+            plateListTallarin.add(tallarinPlate4);
+            
+            plateListMariscos.add(mariscosPlate1);
+            plateListMariscos.add(mariscosPlate2);
+            plateListMariscos.add(mariscosPlate3);
+            
+           menuOfRestaurant.setPlateListTallarin(plateListTallarin);
+           menuOfRestaurant.setPlateListMariscos(plateListMariscos);
+                                             
+            return menuOfRestaurant;
     }
 
     public void displayFullMenu() {
-        System.out.println("======== Menu de Tallarines ========");
-        System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
+        System.out.println("======== Menu of Tallarines ========");
+        System.out.println("ID\tName\t\tDescription\t\tPrice\t\tAvailability\t\tPreparation Time");
         displayMenu(plateListTallarin);
 
-        System.out.println("\n======== Menu de Mariscos ========");
-        System.out.println("ID\tNombre\t\tDescripción\t\tPrecio\t\tDisponibilidad\t\tTiempo de preparación");
+        System.out.println("\n======== Menu of Mariscos ========");
+        System.out.println("ID\tName\t\tDescription\t\tPrice\t\tAvailability\t\tPreparation Time");
         displayMenu(plateListMariscos);
     }
 
     private void displayHeader() {
         System.out.println("---------------------------------------------------------------------------------------------");
         System.out.printf("| %-3s | %-20s | %-40s | %-10s | %-15s | %-20s |\n",
-                "ID", "Nombre", "Descripción", "Precio", "Disponibilidad", "Tiempo de preparación");
+                "ID", "Name", "Description", "Price", "Availability", "Preparation Time");
         System.out.println("---------------------------------------------------------------------------------------------");
     }
 
@@ -108,8 +118,7 @@ public class Menu {
         String jsonMenu = gson.toJson(this);
 
         try (FileWriter fileWrite = new FileWriter(fileName)) {
-            fileWrite.write(jsonMenu);
-            System.out.println("Menu data successfully saved to file  " + fileName + " '. ");
+            fileWrite.write(jsonMenu);        
         } catch (IOException e) {
             System.out.println("Error saving the Json file " + e.getMessage());
         }
@@ -127,7 +136,7 @@ public class Menu {
             Gson gson = new Gson();
             return gson.fromJson(jsonData.toString(), Menu.class);
         } catch (IOException e) {
-            System.out.println("Error al leer el archivo JSON: " + e.getMessage());
+            System.out.println("Error reading the Json file : " + e.getMessage());
             return null;
         }
     }

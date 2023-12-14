@@ -29,7 +29,7 @@ public class Manager extends User{
     }
     
         public static void managerOptions(){
-        Manager manager = new Manager("nombre", "email", "userId", "password", "loginStatus", new Date());
+        Manager manager = new Manager("name", "email", "userId", "password", "loginStatus", new Date());
         int option = 0;
         while(option!=4){
         printManagerOptions();
@@ -46,7 +46,7 @@ public class Manager extends User{
                 menuOfRestaurant.saveMenuAsJson("menu.json");
                 Menu menuFromJson = manager.getMenuOfRestaurant().readMenuFromJson("menu.json");
                 if (menuFromJson != null) {
-                    System.out.println("JSON file read successfully. Menu content:");
+                    System.out.println("=======================================================================================");
                     menuFromJson.displayFullMenu();
                 } else {
                     System.out.println("Error reading JSON file or no content found.");
