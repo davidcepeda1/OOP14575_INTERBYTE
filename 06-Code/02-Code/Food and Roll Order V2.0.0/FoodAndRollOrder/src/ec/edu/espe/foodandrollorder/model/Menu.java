@@ -29,33 +29,15 @@ public class Menu {
         this.plateListTallarin = new ArrayList<>();
         this.plateListMariscos = new ArrayList<>();
     }
-
-    public Menu menuOfRestaurant() {
-
- Menu menuOfRestaurant = new Menu ();                             
-           
-           Plate tallarinPlate1 = new Plate ("Tallarin y legumbres1","Pollo,Lomo,Camarón",5.60,"SI","10 min");
-           Plate tallarinPlate2 = new Plate ("Tallarin y legumbres 2","Pollo, verduras",5.70,"SI","5 min");   
-           Plate tallarinPlate3 = new Plate ("Tallarin y legumbres 3","Camarón,verduras",5.70,"SI","5 min");
-           Plate tallarinPlate4 = new Plate ("Tallarin y legumbres 4","Tallarin y verduras",5.70,"SI","5 min");
-                        
-           Plate mariscosPlate1 = new Plate ("Mariscos y Legumbres 1","Calamar y verduras",6.80,"Sí","5 min");
-           Plate mariscosPlate2 = new Plate ("Mariscos y Legumbres 2","Calamar y Camarón",7.80,"Sí","5 min");   
-           Plate mariscosPlate3 = new Plate ("Mariscos y Legumbres 3","Calamar y Camarón",8.50,"Sí","5 min");   
-           
-            plateListTallarin.add(tallarinPlate1);
-            plateListTallarin.add(tallarinPlate2);
-            plateListTallarin.add(tallarinPlate3);
-            plateListTallarin.add(tallarinPlate4);
-            
-            plateListMariscos.add(mariscosPlate1);
-            plateListMariscos.add(mariscosPlate2);
-            plateListMariscos.add(mariscosPlate3);
-            
-           menuOfRestaurant.setPlateListTallarin(plateListTallarin);
-           menuOfRestaurant.setPlateListMariscos(plateListMariscos);
-                                             
-            return menuOfRestaurant;
+    
+    public void setMenuFromJson(String fileName) {
+        Menu menu = readMenuFromJson(fileName);
+        if (menu != null) {
+            this.plateListTallarin = menu.getPlateListTallarin();
+            this.plateListMariscos = menu.getPlateListMariscos();
+        } else {
+            System.out.println("Error reading JSON file or no content found.");
+        }
     }
 
     public void displayFullMenu() {
@@ -118,7 +100,7 @@ public class Menu {
         String jsonMenu = gson.toJson(this);
 
         try (FileWriter fileWrite = new FileWriter(fileName)) {
-            fileWrite.write(jsonMenu);        
+            fileWrite.write(jsonMenu);
         } catch (IOException e) {
             System.out.println("Error saving the Json file " + e.getMessage());
         }
@@ -131,7 +113,7 @@ public class Menu {
             String line;
             while ((line = reader.readLine()) != null) {
                 jsonData.append(line);
-            }
+            }                       
 
             Gson gson = new Gson();
             return gson.fromJson(jsonData.toString(), Menu.class);

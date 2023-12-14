@@ -2,7 +2,10 @@ package ec.edu.espe.foodandrollorder.view;
 
 import ec.edu.espe.foodandrollorder.model.Customer;
 import ec.edu.espe.foodandrollorder.model.Manager;
+import ec.edu.espe.foodandrollorder.model.Menu;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
+import ec.edu.espe.foodandrollorder.model.ShoppingCart;
+
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -186,16 +189,22 @@ public class FoodAndRollSystem {
     public static void customer() {
     int option = 0;
     int menuSize;
+    Customer customer = new Customer("userId", "password", "loginStatus", new Date());
+    customer.setMenuOfRestaurant(new Menu());
+    
+    ShoppingCart cart = new ShoppingCart();
+    cart.setMenuOfRestaurant(customer.getMenuOfRestaurant());
     do {
         printCustomer();
         menuSize = 3;
         option = validateOptionMenu(option, menuSize);
         switch (option) {
             case 1:
-                registerNewCustomer();
+                registerNewCustomer();                
                 break;
             case 2:
                 validateCustomerLogin();
+                customer.customerOptions();
                 break;
             case 3:
                 System.out.println("Exiting...");
@@ -286,30 +295,6 @@ public class FoodAndRollSystem {
     public static void registerNewManager(){
 
     }                
-
-/*
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.println("=== We need some information about yourself==");
-        System.out.println("Enter manager name: ");
-        String managerName = scanner.nextLine();
-
-        System.out.println("Enter manager email: ");
-        String managerEmail = scanner.nextLine();
-        
-        System.out.println(" == Information for Login ==");
-        System.out.println("Enter manager ID: ");
-        String userId = scanner.nextLine();
-        
-        System.out.println("Enter manager password: ");
-        String password = scanner.nextLine();
-        
-        Date registerDate = new Date();
-        
-        Manager manager= new Manager(managerName, managerEmail, userId, password, "Active", registerDate);
-        */
-
-    
 
     }
         
