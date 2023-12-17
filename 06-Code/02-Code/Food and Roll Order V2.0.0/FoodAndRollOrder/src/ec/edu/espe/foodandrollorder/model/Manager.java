@@ -1,35 +1,41 @@
 package ec.edu.espe.foodandrollorder.model;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Scanner;
 
-/**
- *
- * @author RC_558
- */
 public class Manager extends User {
 
-    private String name;
-    private String email;
+    private String managerName;
+    private String managerEmail;
     private static Menu menuOfRestaurant;
 
     @Override
     public String toString() {
-        return "Manager{" + "name=" + name + ", email=" + email
-                + ", userid=" + userId + ", password=" + password + ", Status=" + loginStatus + ", Date=" + registerDate
-                + "}";
+        return "Manager{" + "name=" + getManagerName() + ", email=" + getManagerEmail() + "}";
     }
 
-    public Manager(String name, String email, String userId, String password, String loginStatus, Date registerDate) {
+    public Manager(String managerName, String managerEmail, String userId, String password, String loginStatus, Date registerDate) {
         super(userId, password, loginStatus, registerDate);
-        this.name = name;
-        this.email = email;
+        this.managerName = managerName;
+        this.managerEmail = managerEmail;
+        this.menuOfRestaurant = new Menu();
+    }
+    
+    public Manager(String userId, String password, String loginStatus, Date registerDate) {
+        super(userId, password, loginStatus, registerDate);
         this.menuOfRestaurant = new Menu();
     }
 
+    
     public static void managerOptions() {
-        Manager manager = new Manager("name", "email", "userId", "password", "loginStatus", new Date());
+        Manager manager = new Manager("userId", "password", "loginStatus", new Date());
         int option = 0;
         while (option != 4) {
             printManagerOptions();
@@ -108,6 +114,40 @@ public class Manager extends User {
 
     }
 
+    public String toCSVManager() {
+        return String.format("%s,%s,%s,%s,%s,%s", getManagerName(), getManagerEmail(), getUserId(), getPassword(), getLoginStatus(), getRegisterDate());
+    }
+
+    public boolean validateLoginForManagers(String enteredUserId, String enteredPassword) {
+        return getUserId().equals(enteredUserId) && getPassword().equals(enteredPassword);
+    }
+
+    public static ArrayList<Manager> readManagersFromCSV(String csvFileName) {
+        ArrayList<Manager> managers = new ArrayList<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(csvFileName))) {
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+
+                String managerName = data[0];
+                String managerEmail = data[1];
+                String userId = data[2];
+                String password = data[3];
+                String loginStatus = data[4];
+                Date registerDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH).parse(data[5]);
+
+                Manager manager = new Manager(managerName, managerEmail, userId, password, loginStatus, registerDate);
+                managers.add(manager);
+            }
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+
+        return managers;
+    }
+    
     public static void printManagerOptions() {
         System.out.println("*================Manager Options=======================*");
         System.out.println("1. Add new dish");
@@ -272,20 +312,20 @@ public class Manager extends User {
         }
     }
 
-    public String getName() {
-        return name;
+    public String getManagerName() {
+        return managerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setManagerName(String name) {
+        this.managerName = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getManagerEmail() {
+        return managerEmail;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setManagerEmail(String email) {
+        this.managerEmail = email;
     }
 
     public Menu getMenuOfRestaurant() {

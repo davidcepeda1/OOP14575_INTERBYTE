@@ -65,11 +65,11 @@ public class Customer extends User {
         }
     }
 
-    public String toCSV() {
+    public String toCSVCustomer() {
         return String.format("%s,%s,%s,%s,%s,%s,%s,%s", getCustomerName(), getEmail(), getPhoneNumber(), getAddress(), getUserId(), getPassword(), getLoginStatus(), getRegisterDate());
     }
 
-    public boolean validateLogin(String enteredUserId, String enteredPassword) {
+    public boolean validateLoginForCustomers(String enteredUserId, String enteredPassword) {
         return getUserId().equals(enteredUserId) && getPassword().equals(enteredPassword);
     }
 

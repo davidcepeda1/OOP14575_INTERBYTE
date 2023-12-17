@@ -144,7 +144,8 @@ public class FoodAndRollSystem {
     public static void manager(){
         int option = 0;
         int menuSize;
-        while(option!=3){
+        Manager manager = new Manager("userId", "password", "loginStatus", new Date());
+        do{
         printManager();
         menuSize=3;
         option=validateOptionMenu(option,menuSize);
@@ -153,17 +154,17 @@ public class FoodAndRollSystem {
                 registerNewManager();
                 break;
             case 2:            
+                validateManagerLogin();
                 Manager.managerOptions();
                 break;
             case 3:
-                
+                System.out.println("Exiting...");
                 break;
             default:
-                throw new AssertionError();
-            }
+                System.out.println("Invalid option. Try again.");
+                }
+            } while (option != 3);
         }
-        
-    }       
     
     public static void chef(){
         int option = 0;
@@ -242,14 +243,14 @@ public class FoodAndRollSystem {
         String password = scanner.nextLine();
         
         Customer customer = new Customer(customerName, customerEmail, customerPhoneNumber, null, userId, password, "active", new Date());
-        saveToCSV(customer);
+        saveToCSVCustomer(customer);
         
     }
     
-     private static void saveToCSV(Customer customer) {
+     private static void saveToCSVCustomer(Customer customer) {
         try (PrintWriter writer = new PrintWriter(new FileWriter("customers.csv", true))) {
             if (customer != null) {
-                writer.println(customer.toCSV());
+                writer.println(customer.toCSVCustomer());
                 System.out.println("Customer registered successfully!");
             }
         } catch (IOException e) {
@@ -257,12 +258,12 @@ public class FoodAndRollSystem {
         }
     }
      
-    public static boolean validateLogin(String enteredUserId, String enteredPassword) {
+    public static boolean validateLoginCustomer(String enteredUserId, String enteredPassword) {
         ArrayList<Customer> customers;
         customers = Customer.readCustomersFromCSV("customers.csv");
 
     for (Customer customer : customers) {
-        if (customer.validateLogin(enteredUserId, enteredPassword)) {
+        if (customer.validateLoginForCustomers(enteredUserId, enteredPassword)) {
             return true; 
         }
     }
@@ -270,31 +271,114 @@ public class FoodAndRollSystem {
     return false; 
 }
 
-   private static boolean validateCustomerLogin() {
-        Scanner scanner = new Scanner(System.in);
+private static boolean validateCustomerLogin() {
+    Scanner scanner = new Scanner(System.in);
 
+    String enteredUserId;
+    String enteredPassword;
+    boolean loginSuccessful = false;
+
+    do {
         System.out.println("Enter customer ID: ");
-        String enteredUserId = scanner.nextLine();
+        enteredUserId = scanner.nextLine();
 
         System.out.println("Enter customer password: ");
-        String enteredPassword = scanner.nextLine();
+        enteredPassword = scanner.nextLine();
 
         ArrayList<Customer> customers = Customer.readCustomersFromCSV("customers.csv");
 
-    for (Customer customer : customers) {
-        if (customer.validateLogin(enteredUserId, enteredPassword)) {
-            System.out.println("Login successful for customer: " + customer.getCustomerName());
+        for (Customer customer : customers) {
+            if (customer.validateLoginForCustomers(enteredUserId, enteredPassword)) {
+                System.out.println("Login successful for customer: " + customer.getCustomerName());
+                loginSuccessful = true;
+                break;
+            }
+        }
+
+        if (!loginSuccessful) {
+            System.out.println("Login failed. No matching customer found. Try again.");
+        }
+
+    } while (!loginSuccessful);
+
+    return true;
+}
+ 
+    public static void registerNewManager(){
+        
+        Scanner scanner = new Scanner(System.in);
+         
+        System.out.println("=== We need some information about yourself, please provide us with correct and real data to proceed with the delivery ==");
+        System.out.println("Enter manager name: ");
+        String managerName = scanner.nextLine();
+        System.out.println("Enter manager email: ");
+        String managerEmail = scanner.nextLine();
+
+        System.out.println(" == Information for Login ==");
+        System.out.println("Enter manager ID: ");
+        String userId = scanner.nextLine();
+        
+        System.out.println("Enter manager password: ");
+        String password = scanner.nextLine();
+        
+        Manager managers = new Manager(managerName, managerEmail, userId, password, "Active", new Date());
+        saveToCSVManager(managers);
+    }                
+
+    private static void saveToCSVManager(Manager managers) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("managers.csv", true))) {
+            if (managers != null) {
+                writer.println(managers.toCSVManager());
+                System.out.println("Manager registered successfully!");
+            }
+        } catch (IOException e) {
+            System.err.println("Error registering Manager: " + e.getMessage());
+        }
+    }
+    
+    public static boolean validateLoginManager(String enteredUserId, String enteredPassword) {
+        ArrayList<Manager> managers;
+        managers = Manager.readManagersFromCSV("manager.csv");
+
+    for (Manager manager : managers) {
+        if (manager.validateLoginForManagers(enteredUserId, enteredPassword)) {
             return true; 
         }
     }
 
-        System.out.println("Login failed. No matching customer found.");
-        return false;
+    return false; 
 }
-    
-    public static void registerNewManager(){
+    private static boolean validateManagerLogin() {
+    Scanner scanner = new Scanner(System.in);
 
-    }                
+    String enteredUserId;
+    String enteredPassword;
+    boolean loginSuccessful = false;
 
+    do {
+        System.out.println("Enter manager ID: ");
+        enteredUserId = scanner.nextLine();
+
+        System.out.println("Enter manager password: ");
+        enteredPassword = scanner.nextLine();
+
+        ArrayList<Manager> managers = Manager.readManagersFromCSV("managers.csv");
+
+        for (Manager manager : managers) {
+            if (manager.validateLoginForManagers(enteredUserId, enteredPassword)) {
+                System.out.println("Login successful for manager: " + manager.getManagerName());
+                loginSuccessful = true;
+                break;
+            }
+        }
+
+        if (!loginSuccessful) {
+            System.out.println("Login failed. No matching manager found. Try again.");
+        }
+
+    } while (!loginSuccessful);
+
+    return true;
+}
     }
         
