@@ -3,10 +3,11 @@ package ec.edu.espe.foodandrollorder.model;
 import java.util.Date;
 
 public class User {
+
     protected String userId;
     protected String password;
     protected String loginStatus;
-    protected  Date registerDate;
+    protected Date registerDate;
 
     public User(String userId, String password, String loginStatus, Date registerDate) {
         this.userId = userId;
@@ -19,7 +20,7 @@ public class User {
     public String toString() {
         return "User{" + "userId=" + getUserId() + ", password=" + getPassword() + ", loginStatus=" + getLoginStatus() + ", registerDate=" + getRegisterDate() + '}';
     }
-    
+
     /**
      * @return the userId
      */
@@ -75,8 +76,8 @@ public class User {
     public void setRegisterDate(Date registerDate) {
         this.registerDate = registerDate;
     }
-    
-    public static void verifyLogin(){
-        
+
+    public static void verifyLogin() {
+
     }
 }
