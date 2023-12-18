@@ -94,25 +94,26 @@ public class Manager extends User {
     public static void removePlateOptions(Manager manager) {
         int option = 0;
         Scanner scanner = new Scanner(System.in);
-        while (option != 2) {
+         do{
             printremovePlateOptions();
             option = validateOptionSubMenu(option);
+          
             switch (option) {
                 case 1:
-                    menuOfRestaurant.displayFullMenu();
-                    System.out.println("Enter the plate ID to remove: ");
-                    int plateId = scanner.nextInt();
-                    manager.removePlateById(plateId);
+                    manager.getMenuOfRestaurant().displayFullMenu();
+                    System.out.println("Enter the plate ID to remove in the menu: ");
+                    int plateIdToRemove = scanner.nextInt();
+                    scanner.nextLine();
+                    manager.removePlateById(plateIdToRemove);
                     break;
                 case 2:
-                    System.out.println("Exiting...");
+                    System.out.println("Exiting remove plate options...");
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Invalid option. Try again.");
             }
-        }
-
-    }
+        } while (option != 2);
+}
 
     public String toCSVManager() {
         return String.format("%s,%s,%s,%s,%s,%s", getManagerName(), getManagerEmail(), getUserId(), getPassword(), getLoginStatus(), getRegisterDate());
@@ -165,9 +166,8 @@ public class Manager extends User {
 
     public static void printremovePlateOptions() {
         System.out.println("*================Remove Plate Options=======================*");
-        System.out.println("1. Remove dish in the Tallarin category ");
-        System.out.println("2. Remove dish in the Mariscos category ");
-        System.out.println("3. Return");
+        System.out.println("1. Remove dish in the Menu by ID ");
+        System.out.println("2. Return");
     }
 
     private static int validateOptionMenu(int option) {
@@ -183,7 +183,6 @@ public class Manager extends User {
 
             } catch (Exception e) {
                 System.out.println("Enter only numbers: ");
-                scanner.nextLine();
             }
         } while (option != 1 && option != 2 && option != 3);
         return option;
@@ -195,18 +194,18 @@ public class Manager extends User {
             System.out.println("Select an option:");
 
             try {
-                option = scanner.nextInt();
+                option = Integer.parseInt(scanner.nextLine());
                 if (option != 1 && option != 2) {
                     System.out.println("Incorrect option, Try Again.");
                 }
 
-            } catch (Exception e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Enter only numbers: ");
-                scanner.nextLine();
             }
         } while (option != 1 && option != 2);
         return option;
     }
+    
 
     private static int validateMenuManager(int option) {
         Scanner scanner = new Scanner(System.in);
@@ -239,9 +238,20 @@ public class Manager extends User {
         System.out.println("Dish successfully added to the Mariscos category");
     }
 
-    public void removePlateById(int plateId) {
-        menuOfRestaurant.removePlateById(plateId);
-        System.out.println("Successfully removed dish.");
+    public Plate removePlateById(int plateId) {
+        Plate removedPlate = menuOfRestaurant.removePlateById(plateId);
+
+        if (removedPlate != null) {
+            System.out.println("Successfully removed dish with ID " + plateId);
+        } else {
+            System.out.println("Plate with ID " + plateId + " does not exist. Nothing to remove.");
+        }
+
+        if (menuOfRestaurant.isEmpty()) {
+            System.out.println("The menu is now empty.");
+        }
+
+        return removedPlate;
     }
 
     public Plate registerNewPlate() {

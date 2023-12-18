@@ -73,12 +73,7 @@ public class Menu {
     public void addPlateToListMariscos(Plate plate) {
         this.plateListMariscos.add(plate);
     }
-
-    public void removePlateById(int plateId) {
-        plateListTallarin.removeIf(plate -> plate.getId() == plateId);
-        plateListMariscos.removeIf(plate -> plate.getId() == plateId);
-    }
-
+    
     public Plate getPlateById(int plateId) {
         for (Plate plate : plateListTallarin) {
             if (plate.getId() == plateId) {
@@ -93,6 +88,31 @@ public class Menu {
         }
 
         return null;
+    }
+    
+    public boolean isEmpty() {
+        return plateListTallarin.isEmpty() && plateListMariscos.isEmpty();
+    }
+
+
+    public Plate removePlateById(int plateId) {
+    Plate removedPlate = removePlateFromList(plateId, plateListTallarin);
+    if (removedPlate == null) {
+        removedPlate = removePlateFromList(plateId, plateListMariscos);
+    }
+    return removedPlate;
+}
+
+    private Plate removePlateFromList(int plateId, ArrayList<Plate> plateList) {
+        Plate removedPlate = null;
+        for (Plate plate : plateList) {
+            if (plate.getId() == plateId) {
+                removedPlate = plate;
+                plateList.remove(plate);
+                break;
+            }
+        }
+        return removedPlate;
     }
 
     public void saveMenuAsJson(String fileName) {
