@@ -53,7 +53,7 @@ public class Customer extends User {
                 case 2:
                     cart.addDishToCart();
                     break;
-                case 3:     
+                case 3:
                     cart.viewCartDetails();
                     break;
                 case 4:
@@ -116,7 +116,7 @@ public class Customer extends User {
 
             try {
                 option = scanner.nextInt();
-                if (option != 1 && option != 2 && option != 3 && option != 4 ) {
+                if (option != 1 && option != 2 && option != 3 && option != 4) {
                     System.out.println("Incorrect option, Try Again.");
                 }
 
@@ -124,16 +124,8 @@ public class Customer extends User {
                 System.out.println("Enter only numbers: ");
                 scanner.nextLine();
             }
-        } while (option != 1 && option != 2 && option != 3 && option != 4 );
+        } while (option != 1 && option != 2 && option != 3 && option != 4);
         return option;
-    }
-
-    public boolean register() {
-        return true;
-    }
-
-    public void login() {
-
     }
 
     public void ShowFullMenu() {
@@ -143,14 +135,6 @@ public class Customer extends User {
         } else {
             System.out.println("Error: Menu not initialized.");
         }
-    }
-
-    public Menu searchDish() {
-        //Menu menu = new Menu();
-        //return menu;
-        return null;
-        //Menu menu = new Menu();
-        //return menu;
     }
 
     /**

@@ -2,10 +2,6 @@ package ec.edu.espe.foodandrollorder.model;
 
 import java.util.Date;
 
-/**
- *
- * @author RC_558
- */
 public class RatingsAndReviews {
     private int commentId;
     private Date commentDate;
