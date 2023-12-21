@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 import java.io.BufferedReader;
@@ -17,11 +21,6 @@ public class Customer extends User {
     private String phoneNumber;
     private String address;
     private Menu menuOfRestaurant;
-
-    @Override
-    public String toString() {
-        return "Customer{" + "customerName=" + getCustomerName() + ", email=" + getEmail() + ", phoneNumber=" + getPhoneNumber() + ", address=" + getAddress() + '}';
-    }
 
     public Customer(String customerName, String email, String phoneNumber, String address, String userId, String password, String loginStatus, Date registerDate) {
         super(userId, password, loginStatus, registerDate);
@@ -81,17 +80,7 @@ public class Customer extends User {
 
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-
-                String customerName = data[0];
-                String email = data[1];
-                String phoneNumber = data[2];
-                String address = data[3];
-                String userId = data[4];
-                String password = data[5];
-                String loginStatus = data[6];
-                Date registerDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH).parse(data[7]);
-
-                Customer customer = new Customer(customerName, email, phoneNumber, address, userId, password, loginStatus, registerDate);
+                Customer customer = createCustomerFromData(data);
                 customers.add(customer);
             }
         } catch (IOException | ParseException e) {
@@ -99,6 +88,19 @@ public class Customer extends User {
         }
 
         return customers;
+    }
+
+    private static Customer createCustomerFromData(String[] data) throws ParseException {
+        String customerName = data[0];
+        String email = data[1];
+        String phoneNumber = data[2];
+        String address = data[3];
+        String userId = data[4];
+        String password = data[5];
+        String loginStatus = data[6];
+        Date registerDate = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH).parse(data[7]);
+
+        return new Customer(customerName, email, phoneNumber, address, userId, password, loginStatus, registerDate);
     }
 
     public static void printCustomerOptions() {
@@ -137,6 +139,14 @@ public class Customer extends User {
         }
     }
 
+<<<<<<< HEAD
+    @Override
+    public String toString() {
+        return "Customer{" + "customerName=" + getCustomerName() + ", email=" + getEmail() + ", phoneNumber=" + getPhoneNumber() + ", address=" + getAddress() + '}';
+    }
+
+=======
+>>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
     /**
      * @return the customerName
      */

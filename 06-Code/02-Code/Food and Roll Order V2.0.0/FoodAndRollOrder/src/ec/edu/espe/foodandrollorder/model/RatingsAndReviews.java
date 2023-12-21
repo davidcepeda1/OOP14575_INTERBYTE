@@ -1,8 +1,13 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 import java.util.Date;
 
 public class RatingsAndReviews {
+
     private int commentId;
     private Date commentDate;
     private String contentComments;
@@ -17,27 +22,27 @@ public class RatingsAndReviews {
     public String toString() {
         return "RatingsAndReviews{" + "commentId=" + commentId + ", commentDate=" + commentDate + ", contentComments=" + contentComments + '}';
     }
-    
-    public void postComment(){
-        
+
+    public void postComment() {
+
     }
 
-    public void removeComment(){
-        
+    public void removeComment() {
+
     }
-    
-    public void addComment(){
-        
+
+    public void addComment() {
+
     }
-    
-    public void addRating(){
-        
+
+    public void addRating() {
+
     }
-    
-    public void removeRating(){
-        
+
+    public void removeRating() {
+
     }
-    
+
     /**
      * @return the commentId
      */
@@ -79,7 +84,5 @@ public class RatingsAndReviews {
     public void setContentComments(String contentComments) {
         this.contentComments = contentComments;
     }
-
-    
 
 }
