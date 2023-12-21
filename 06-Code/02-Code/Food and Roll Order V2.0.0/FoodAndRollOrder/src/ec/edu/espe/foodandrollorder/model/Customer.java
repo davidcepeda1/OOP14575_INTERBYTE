@@ -139,11 +139,14 @@ public class Customer extends User {
         }
     }
 
+<<<<<<< HEAD
     @Override
     public String toString() {
         return "Customer{" + "customerName=" + getCustomerName() + ", email=" + getEmail() + ", phoneNumber=" + getPhoneNumber() + ", address=" + getAddress() + '}';
     }
 
+=======
+>>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
     /**
      * @return the customerName
      */

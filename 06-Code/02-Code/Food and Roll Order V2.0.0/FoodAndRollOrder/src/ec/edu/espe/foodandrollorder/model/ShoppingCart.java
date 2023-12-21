@@ -12,24 +12,26 @@ public class ShoppingCart {
 
     private int carId;
     private int productId;
-    private int quantity;
+
     private Date dateAdded;
     private Menu menuOfRestaurant;
-    private ArrayList<Integer> cartItems = new ArrayList<>();
     private ArrayList<Plate> platesInCart = new ArrayList<>();
+<<<<<<< HEAD
+=======
+    private ArrayList<CartItem> cartItems = new ArrayList<>();
+>>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
 
     @Override
     public String toString() {
-        return "ShoppingCart{" + "carId=" + carId + ", productId=" + productId + ", quantity=" + quantity + ", dateAdded=" + dateAdded + ", menuOfRestaurant=" + menuOfRestaurant + '}';
+        return "ShoppingCart{" + "carId=" + carId + ", productId=" + productId + ", dateAdded=" + dateAdded + ", menuOfRestaurant=" + menuOfRestaurant + '}';
     }
 
     public ShoppingCart() {
     }
 
-    public ShoppingCart(int carId, int productId, int quantity, Date dateAdded, Menu menuOfRestaurant) {
+    public ShoppingCart(int carId, int productId, Date dateAdded, Menu menuOfRestaurant) {
         this.carId = carId;
         this.productId = productId;
-        this.quantity = quantity;
         this.dateAdded = dateAdded;
         this.menuOfRestaurant = menuOfRestaurant;
     }
@@ -52,12 +54,28 @@ public class ShoppingCart {
 
         Plate plateToAdd = getMenuOfRestaurant().getPlateById(plateId);
         if (plateToAdd != null) {
-            cartItems.add(plateId);
+
             platesInCart.add(plateToAdd);
+            quantityOfDishes(plateToAdd);
             System.out.println("Dish added to the cart.");
+
         } else {
             System.out.println("Dish not found in the menu.");
         }
+    }
+
+    public void quantityOfDishes(Plate plateToAdd) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("*============" + plateToAdd.getName() + "================*");
+        System.out.println("Price: $" + plateToAdd.getPrice());
+        System.out.println("Availavility: " + plateToAdd.getAvailability());
+        System.out.println("Description: " + plateToAdd.getDescription());
+        System.out.println("==================================================");
+        System.out.println("Enter the quantity: ");
+        int quantity = scanner.nextInt();
+        double totalPriceOfDish = quantity * plateToAdd.getPrice();
+        CartItem cartItem = new CartItem(plateToAdd, quantity, totalPriceOfDish);
+        cartItems.add(cartItem);
     }
 
     public void ShowFullMenu() {
@@ -69,34 +87,46 @@ public class ShoppingCart {
         }
     }
 
+<<<<<<< HEAD
     public void removeCartItem() {
 
     }
 
+=======
+>>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
     public void viewCartDetails() {
         System.out.println("**==================Shopping Cart=====================**");
         if (cartItems.isEmpty()) {
             System.out.println("The cart is empty.");
         } else {
             System.out.println("Items in the cart:");
-            for (Integer plateId : cartItems) {
-                Plate plate = getMenuOfRestaurant().getPlateById(plateId);
+            for (CartItem cartItem : cartItems) {
+                Plate plate = cartItem.getPlate();
+                int quantity = cartItem.getQuantity();
+                double totalPriceOfDish = cartItem.getTotalPriceOfDish();
+
                 if (plate != null) {
-                    System.out.printf("ID: %d, Name: %s, Price: %.2f%n", plate.getId(), plate.getName(), plate.getPrice());
+
+                    System.out.printf("ID: %d, Name: %s, Quantity: %d, Total: $%.2f%n",
+                            plate.getId(), plate.getName(), quantity, totalPriceOfDish);
                 }
             }
             calculateTotalPrice();
+
         }
     }
 
     public void calculateTotalPrice() {
         double totalPrice = 0.0;
 
-        for (Plate plate : platesInCart) {
-            totalPrice += plate.getPrice();
+        for (CartItem carItem : cartItems) {
+
+            double totalPriceOfDish = carItem.getTotalPriceOfDish();
+            totalPrice += totalPriceOfDish;
+
         }
 
-        System.out.println("Total Price of items in the cart: $" + totalPrice);
+        System.out.printf("Total Price of items in the cart:$%.2f%n", totalPrice);
     }
 
     /**
@@ -125,20 +155,6 @@ public class ShoppingCart {
      */
     public void setProductId(int productId) {
         this.productId = productId;
-    }
-
-    /**
-     * @return the quantity
-     */
-    public int getQuantity() {
-        return quantity;
-    }
-
-    /**
-     * @param quantity the quantity to set
-     */
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     /**
