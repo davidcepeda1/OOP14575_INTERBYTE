@@ -1,22 +1,22 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
+package ec.edu.espe.foodandrollorder.model;
 
-    package ec.edu.espe.foodandrollorder.model;
+public class OrderDetails {
 
-    /**
-     *
-     * @author Sebastian
-     */
-    public class OrderDetails {
-         private int orderld;
-        private int productld;
-        private String productName;
-        private int quantity;
-        private float unitCost;
-        private float subTotal;
+    private int orderld;
+    private int productld;
+    private String productName;
+    private int quantity;
+    private float unitCost;
+    private float subTotal;
 
-        public void calculatePrice(){
-  // Lógica para calcular el precio total (subTotal)
+    public void calculatePrice() {
+        // Lógica para calcular el precio total (subTotal)
         setSubTotal(getQuantity() * getUnitCost());
-        }
+    }
 
     public OrderDetails(int orderld, int productld, String productName, int quantity, float unitCost, float subTotal) {
         this.orderld = orderld;
@@ -110,6 +110,5 @@
     public void setSubTotal(float subTotal) {
         this.subTotal = subTotal;
     }
-        
-    }
 
+}

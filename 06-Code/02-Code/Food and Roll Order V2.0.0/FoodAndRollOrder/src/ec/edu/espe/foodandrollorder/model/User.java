@@ -1,3 +1,7 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 import java.util.Date;

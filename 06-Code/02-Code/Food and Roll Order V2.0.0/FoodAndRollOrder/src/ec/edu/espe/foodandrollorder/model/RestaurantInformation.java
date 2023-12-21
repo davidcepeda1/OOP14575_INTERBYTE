@@ -1,6 +1,11 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 public class RestaurantInformation {
+
     private String addressOfRestaurant;
     private String phoneNumberOfRestaurant;
     private String emailOfRestaurant;
@@ -31,7 +36,6 @@ public class RestaurantInformation {
         System.out.println("***=======================================***");
     }
 
-    
     /**
      * @return the addressOfRestaurant
      */
@@ -50,7 +54,7 @@ public class RestaurantInformation {
      * @return the phoneNumberOfRestaurant
      */
     public String getPhoneNumberOfRestaurant() {
-        
+
         return phoneNumberOfRestaurant;
     }
 
@@ -88,6 +92,5 @@ public class RestaurantInformation {
     public void setLocationReference(String locationReference) {
         this.locationReference = locationReference;
     }
-    
-    
+
 }

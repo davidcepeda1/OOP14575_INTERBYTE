@@ -1,21 +1,25 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 public class Plate {
-    
+
     private int id;
     private static int nextId = 1;
     private String name;
     private String description;
     private double price;
     private String availability;
-    private  String preparationTime;
+    private String preparationTime;
 
     @Override
     public String toString() {
         return "Plate{" + "id=" + id + ", name=" + name + ", description=" + description + ", price=" + price + ", availability=" + availability + ", preparationTime=" + preparationTime + '}';
     }
 
-    public Plate( String name, String description, double price, String availability, String preparationTime) {
+    public Plate(String name, String description, double price, String availability, String preparationTime) {
         this.id = nextId++;
         this.name = name;
         this.description = description;
@@ -23,33 +27,33 @@ public class Plate {
         this.availability = availability;
         this.preparationTime = preparationTime;
     }
-      
-    public void checkAvaiability () {
-        
+
+    public void checkAvaiability() {
+
     }
-    
-    public void getDetails () {
-        
+
+    public void getDetails() {
+
     }
-    
-    public void updatePrice (double newPrice) {
-        this.price = newPrice;        
+
+    public void updatePrice(double newPrice) {
+        this.price = newPrice;
     }
-    
-    public void updateAvailability (String newAvailability) {
+
+    public void updateAvailability(String newAvailability) {
         this.availability = newAvailability;
     }
-    
-    public void modifyDescription () {
-        
+
+    public void modifyDescription() {
+
     }
-    
-    public void calculatePreparationTime () {
-        
+
+    public void calculatePreparationTime() {
+
     }
-    
-    public void addImage () { 
-        
+
+    public void addImage() {
+
     }
 
     public int getId() {
@@ -99,6 +103,5 @@ public class Plate {
     public void setPreparationTime(String preparationTime) {
         this.preparationTime = preparationTime;
     }
-          
-}
 
+}

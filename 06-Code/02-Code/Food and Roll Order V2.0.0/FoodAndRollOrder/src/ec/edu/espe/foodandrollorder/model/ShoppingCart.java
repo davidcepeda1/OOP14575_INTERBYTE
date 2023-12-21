@@ -1,13 +1,13 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
 package ec.edu.espe.foodandrollorder.model;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Scanner;
 
-/**
- *
- * @author RC_558
- */
 public class ShoppingCart {
 
     private int carId;
@@ -17,7 +17,7 @@ public class ShoppingCart {
     private Menu menuOfRestaurant;
     private ArrayList<Integer> cartItems = new ArrayList<>();
     private ArrayList<Plate> platesInCart = new ArrayList<>();
-    
+
     @Override
     public String toString() {
         return "ShoppingCart{" + "carId=" + carId + ", productId=" + productId + ", quantity=" + quantity + ", dateAdded=" + dateAdded + ", menuOfRestaurant=" + menuOfRestaurant + '}';
@@ -72,7 +72,7 @@ public class ShoppingCart {
     public void removeCartItem() {
 
     }
-    
+
     public void viewCartDetails() {
         System.out.println("**==================Shopping Cart=====================**");
         if (cartItems.isEmpty()) {

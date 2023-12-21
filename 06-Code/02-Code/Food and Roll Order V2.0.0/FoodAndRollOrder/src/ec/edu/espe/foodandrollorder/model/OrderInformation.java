@@ -1,14 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
  */
 package ec.edu.espe.foodandrollorder.model;
 
-/**
- *
- * @author Sebatian
- */
 public class OrderInformation {
+
     private int shippingld;
     private int shippingCost;
 
@@ -16,9 +13,9 @@ public class OrderInformation {
         this.shippingld = shippingld;
         this.shippingCost = shippingCost;
     }
-    
-    public void updateShippingInfo(){
-        
+
+    public void updateShippingInfo() {
+
     }
 
     /**
@@ -48,5 +45,5 @@ public class OrderInformation {
     public void setShippingCost(int shippingCost) {
         this.shippingCost = shippingCost;
     }
-            
+
 }

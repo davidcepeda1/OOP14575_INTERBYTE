@@ -1,3 +1,8 @@
+/**
+ *
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
+ */
+
 package ec.edu.espe.foodandrollorder.model;
 
 import java.io.BufferedReader;
@@ -16,24 +21,18 @@ public class Manager extends User {
     private String managerEmail;
     private static Menu menuOfRestaurant;
 
-    @Override
-    public String toString() {
-        return "Manager{" + "name=" + getManagerName() + ", email=" + getManagerEmail() + "}";
-    }
-
     public Manager(String managerName, String managerEmail, String userId, String password, String loginStatus, Date registerDate) {
         super(userId, password, loginStatus, registerDate);
         this.managerName = managerName;
         this.managerEmail = managerEmail;
         this.menuOfRestaurant = new Menu();
     }
-    
+
     public Manager(String userId, String password, String loginStatus, Date registerDate) {
         super(userId, password, loginStatus, registerDate);
         this.menuOfRestaurant = new Menu();
     }
 
-    
     public static void managerOptions() {
         Manager manager = new Manager("userId", "password", "loginStatus", new Date());
         int option = 0;
@@ -94,10 +93,10 @@ public class Manager extends User {
     public static void removePlateOptions(Manager manager) {
         int option = 0;
         Scanner scanner = new Scanner(System.in);
-         do{
+        do {
             printremovePlateOptions();
             option = validateOptionSubMenu(option);
-          
+
             switch (option) {
                 case 1:
                     manager.getMenuOfRestaurant().displayFullMenu();
@@ -113,7 +112,7 @@ public class Manager extends User {
                     System.out.println("Invalid option. Try again.");
             }
         } while (option != 2);
-}
+    }
 
     public String toCSVManager() {
         return String.format("%s,%s,%s,%s,%s,%s", getManagerName(), getManagerEmail(), getUserId(), getPassword(), getLoginStatus(), getRegisterDate());
@@ -148,7 +147,7 @@ public class Manager extends User {
 
         return managers;
     }
-    
+
     public static void printManagerOptions() {
         System.out.println("*================Manager Options=======================*");
         System.out.println("1. Add new dish");
@@ -205,7 +204,6 @@ public class Manager extends User {
         } while (option != 1 && option != 2);
         return option;
     }
-    
 
     private static int validateMenuManager(int option) {
         Scanner scanner = new Scanner(System.in);
@@ -222,36 +220,8 @@ public class Manager extends User {
                 System.out.println("Enter only numbers: ");
                 scanner.nextLine();
             }
-        } while (option != 1 && option != 2 && option != 3 && option!=4);
+        } while (option != 1 && option != 2 && option != 3 && option != 4);
         return option;
-    }
-
-    public void addTallarinPlate() {
-        Plate addedPlate = registerNewPlate();
-        menuOfRestaurant.addPlateToListTallarin(addedPlate);
-        System.out.println("Dish successfully added to the Tallarines category");
-    }
-
-    public void addMariscosPlate() {
-        Plate addedPlate = registerNewPlate();
-        menuOfRestaurant.addPlateToListMariscos(addedPlate);
-        System.out.println("Dish successfully added to the Mariscos category");
-    }
-
-    public Plate removePlateById(int plateId) {
-        Plate removedPlate = menuOfRestaurant.removePlateById(plateId);
-
-        if (removedPlate != null) {
-            System.out.println("Successfully removed dish with ID " + plateId);
-        } else {
-            System.out.println("Plate with ID " + plateId + " does not exist. Nothing to remove.");
-        }
-
-        if (menuOfRestaurant.isEmpty()) {
-            System.out.println("The menu is now empty.");
-        }
-
-        return removedPlate;
     }
 
     public Plate registerNewPlate() {
@@ -320,6 +290,39 @@ public class Manager extends User {
         } else {
             System.out.println("Dish ID does not exist");
         }
+    }
+
+    public void addTallarinPlate() {
+        Plate addedPlate = registerNewPlate();
+        menuOfRestaurant.addPlateToListTallarin(addedPlate);
+        System.out.println("Dish successfully added to the Tallarines category");
+    }
+
+    public void addMariscosPlate() {
+        Plate addedPlate = registerNewPlate();
+        menuOfRestaurant.addPlateToListMariscos(addedPlate);
+        System.out.println("Dish successfully added to the Mariscos category");
+    }
+
+    public Plate removePlateById(int plateId) {
+        Plate removedPlate = menuOfRestaurant.removePlateById(plateId);
+
+        if (removedPlate != null) {
+            System.out.println("Successfully removed dish with ID " + plateId);
+        } else {
+            System.out.println("Plate with ID " + plateId + " does not exist. Nothing to remove.");
+        }
+
+        if (menuOfRestaurant.isEmpty()) {
+            System.out.println("The menu is now empty.");
+        }
+
+        return removedPlate;
+    }
+
+    @Override
+    public String toString() {
+        return "Manager{" + "name=" + getManagerName() + ", email=" + getManagerEmail() + "}";
     }
 
     public String getManagerName() {

@@ -1,19 +1,19 @@
-
-package ec.edu.espe.foodandrollorder.model;
-
 /**
  *
- * @author Sebastian
+ * @author Rony Cedeño, David Cepeda, Mateo Criollo, Sebastian Criollo, INTER BYTE, DCCO-ESPE
  */
+package ec.edu.espe.foodandrollorder.model;
+
 public class Order {
+
     private int orderld;
     private String dateCreated;
     private String customerName;
     private String customerld;
     private boolean OrderStatus;
-    
-    public void placeOrder(){
-        
+
+    public void placeOrder() {
+
     }
 
     public Order(int orderld, String dateCreated, String customerName, String customerld, boolean status) {
@@ -93,7 +93,5 @@ public class Order {
     public void setOrderStatus(boolean OrderStatus) {
         this.OrderStatus = OrderStatus;
     }
-    
-    
-    
+
 }
