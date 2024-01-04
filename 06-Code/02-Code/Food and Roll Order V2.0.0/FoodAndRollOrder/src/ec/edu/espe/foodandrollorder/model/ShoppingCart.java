@@ -16,11 +16,8 @@ public class ShoppingCart {
     private Date dateAdded;
     private Menu menuOfRestaurant;
     private ArrayList<Plate> platesInCart = new ArrayList<>();
-<<<<<<< HEAD
-=======
-    private ArrayList<CartItem> cartItems = new ArrayList<>();
->>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
 
+    private ArrayList<CartItem> cartItems = new ArrayList<>();
     @Override
     public String toString() {
         return "ShoppingCart{" + "carId=" + carId + ", productId=" + productId + ", dateAdded=" + dateAdded + ", menuOfRestaurant=" + menuOfRestaurant + '}';
@@ -87,13 +84,9 @@ public class ShoppingCart {
         }
     }
 
-<<<<<<< HEAD
     public void removeCartItem() {
 
     }
-
-=======
->>>>>>> 32dae470e081828ca68b678201e1f1a79882ba4e
     public void viewCartDetails() {
         System.out.println("**==================Shopping Cart=====================**");
         if (cartItems.isEmpty()) {
