@@ -16,7 +16,6 @@ public class ShoppingCart {
     private Date dateAdded;
     private Menu menuOfRestaurant;
     private ArrayList<Plate> platesInCart = new ArrayList<>();
-
     private ArrayList<CartItem> cartItems = new ArrayList<>();
 
     @Override

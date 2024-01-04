@@ -7,6 +7,7 @@ package ec.edu.espe.foodandrollorder.view;
 import ec.edu.espe.foodandrollorder.model.Customer;
 import ec.edu.espe.foodandrollorder.model.Manager;
 import ec.edu.espe.foodandrollorder.model.Menu;
+import ec.edu.espe.foodandrollorder.model.RestaurantChef;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
 import ec.edu.espe.foodandrollorder.model.ShoppingCart;
 
@@ -171,22 +172,25 @@ public class FoodAndRollSystem {
     public static void chef() {
         int option = 0;
         int menuSize;
-        while (option != 3) {
+        RestaurantChef chef = new RestaurantChef("userId", "password", "loginStatus", new Date());
+        do {
             printChef();
             menuSize = 3;
             option = validateOptionMenu(option, menuSize);
             switch (option) {
                 case 1:
+                    registerNewChef();
                     break;
                 case 2:
+                     validateChefLogin();
                     break;
                 case 3:
-
+                    System.out.println("Exiting...");
                     break;
                 default:
-                    throw new AssertionError();
+                    System.out.println("Invalid option. Try again.");
             }
-        }
+        } while (option != 3);
     }
 
     public static void customer() {
@@ -381,4 +385,83 @@ public class FoodAndRollSystem {
 
         return true;
     }
-}  
+    
+    public static void registerNewChef() {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("=== We need some information about yourself, please provide us with correct and real data to proceed with the delivery ==");
+        System.out.println("Enter chef name: ");
+        String chefName = scanner.nextLine();
+        System.out.println("Enter chef email: ");
+        String Email = scanner.nextLine();
+
+        System.out.println(" == Information for Login ==");
+        System.out.println("Enter chef ID: ");
+        String userId = scanner.nextLine();
+
+        System.out.println("Enter chef password: ");
+        String password = scanner.nextLine();
+
+        RestaurantChef chef = new RestaurantChef(chefName, Email, userId, password, chefName, new Date());
+        saveToCSVChef(chef);
+    }
+
+    private static void saveToCSVChef(RestaurantChef chefs) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("chefs.csv", true))) {
+            if (chefs != null) {
+                writer.println(chefs.toCSVChef());
+                System.out.println("Chef registered successfully!");
+            }
+        } catch (IOException e) {
+            System.err.println("Error registering Chef: " + e.getMessage());
+        }
+    }
+
+    public static boolean validateLoginChef(String enteredUserId, String enteredPassword) {
+        ArrayList<RestaurantChef> chefs;
+        chefs = RestaurantChef.readChefFromCSV("chefs.csv");
+
+        for (RestaurantChef chef : chefs) {
+            if (chef.validateLoginForChef(enteredUserId, enteredPassword)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    private static boolean validateChefLogin() {
+        Scanner scanner = new Scanner(System.in);
+
+        String enteredUserId;
+        String enteredPassword;
+        boolean loginSuccessful = false;
+
+        do {
+            System.out.println("Enter chef ID: ");
+            enteredUserId = scanner.nextLine();
+
+            System.out.println("Enter chef password: ");
+            enteredPassword = scanner.nextLine();
+
+            ArrayList<RestaurantChef> chefs = RestaurantChef.readChefFromCSV("chefs.csv");
+
+            for (RestaurantChef chef : chefs) {
+                if (chef.validateLoginForChef(enteredUserId, enteredPassword)) {
+                    System.out.println("Login successful for chef: " + chef.getChefName());
+                    loginSuccessful = true;
+                    break;
+                }
+            }
+
+            if (!loginSuccessful) {
+                System.out.println("Login failed. No matching chef found. Try again.");
+            }
+
+        } while (!loginSuccessful);
+
+        return true;
+    }
+
+}
