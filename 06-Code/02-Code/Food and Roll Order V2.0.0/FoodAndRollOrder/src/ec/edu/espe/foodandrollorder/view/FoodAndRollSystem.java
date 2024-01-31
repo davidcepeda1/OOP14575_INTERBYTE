@@ -10,6 +10,8 @@ import ec.edu.espe.foodandrollorder.model.Menu;
 import ec.edu.espe.foodandrollorder.model.RestaurantChef;
 import ec.edu.espe.foodandrollorder.model.RestaurantInformation;
 import ec.edu.espe.foodandrollorder.model.ShoppingCart;
+import ec.edu.espe.foodandrollorder.utils.DataBaseCustomer;
+import ec.edu.espe.foodandrollorder.utils.DataBaseManager;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -248,6 +250,7 @@ public class FoodAndRollSystem {
 
         Customer customer = new Customer(customerName, customerEmail, customerPhoneNumber, null, userId, password, "active", new Date());
         saveToCSVCustomer(customer);
+        DataBaseCustomer.saveCustomer(customer);
 
     }
 
@@ -327,6 +330,7 @@ public class FoodAndRollSystem {
 
         Manager managers = new Manager(managerName, managerEmail, userId, password, "Active", new Date());
         saveToCSVManager(managers);
+        DataBaseManager.saveCustomer(managers);
     }
 
     private static void saveToCSVManager(Manager managers) {
