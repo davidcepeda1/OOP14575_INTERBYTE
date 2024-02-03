@@ -9,7 +9,7 @@ public class GrilledShrimp extends Plate{
     
     private boolean spicy;
     
-    public GrilledShrimp(int id,String name,String description, double price,String availability,double preparationTime,boolean spicy){
+    public GrilledShrimp(int id,String name,String description, double price,String availability,String preparationTime,boolean spicy){
         super(id,name,"Seafood",description,price,availability,preparationTime);
         this.spicy = spicy;
     }

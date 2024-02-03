@@ -9,7 +9,7 @@ public class RiceWithCalamari extends Plate {
 
     private boolean hasSquidInk;
 
-    public RiceWithCalamari(int id, String name, String description, double price, String availability, double preparationTime, boolean hasSquidInk) {
+    public RiceWithCalamari(int id, String name, String description, double price, String availability, String preparationTime, boolean hasSquidInk) {
         super(id, name, "Seafood", description, price, availability, preparationTime);
         this.hasSquidInk = hasSquidInk;
     }
