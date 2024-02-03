@@ -93,6 +93,34 @@ public class DataBaseManager {
             System.out.println("No se pudo acceder a la base de datos");
         }
     }
+   
+    
+    
+    public static boolean findManager(String username, String password, String collection){
+        MongoCollection <Document> dataBase = getCollection(collection);
+        if(dataBase!=null){
+            Document foundUsername =(Document) dataBase.find(new Document("userId",username)).first();
+            Document foundPassword =(Document) dataBase.find(new Document("password",password)).first();
+            return foundUsername!=null && foundPassword !=null;
+        }
+        return false;
+    }
+    
+    public static MongoCollection<Document> getCollection(String collection){
+        try {
+            MongoClient mongoClient = MongoClients.create(URI);
+            MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
+            
+            return database.getCollection(collection);
+        } catch (MongoException | NoSuchMethodError e) {
+            System.err.println(e.getCause());
+            return null; 
+        }
+    }
+    
+    
+    
+    
     
     public static void searchCustomer(String name){
         MongoCollection <Document> collection=getCollection();
