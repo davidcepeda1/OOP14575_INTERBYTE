@@ -1,7 +1,9 @@
 
-package ec.edu.espe.foodandrollorder.controller;
+package ec.espe.edu.FoodAndRollOrderV.controller;
 
-import ec.edu.espe.foodandrollorder.utils.DataBase;
+import ec.espe.edu.FoodAndRollOrderV.model.Manager;
+import utils.DataBase;
+
 
 /**
  *
@@ -14,4 +16,7 @@ public class ManagerController {
         return DataBase.findManager(username, password, nameCollection);
     }
     
+    public static boolean createManager(Manager manager){
+        return DataBase.createManager(manager, nameCollection);
+    }
 }

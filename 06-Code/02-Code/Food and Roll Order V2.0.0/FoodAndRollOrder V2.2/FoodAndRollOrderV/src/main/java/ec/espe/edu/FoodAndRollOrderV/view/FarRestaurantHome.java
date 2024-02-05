@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package ec.edu.espe.foodandrollorder.view;
+package ec.espe.edu.FoodAndRollOrderV.view;
+
 
 /**
  *
@@ -15,7 +16,6 @@ public class FarRestaurantHome extends javax.swing.JFrame {
      */
     public FarRestaurantHome() {
         initComponents();
-        
     }
 
     /**
@@ -161,6 +161,9 @@ public class FarRestaurantHome extends javax.swing.JFrame {
         frmLoginManager.setVisible(true);
     }//GEN-LAST:event_btmManagerActionPerformed
 
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -186,6 +189,7 @@ public class FarRestaurantHome extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FarRestaurantHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

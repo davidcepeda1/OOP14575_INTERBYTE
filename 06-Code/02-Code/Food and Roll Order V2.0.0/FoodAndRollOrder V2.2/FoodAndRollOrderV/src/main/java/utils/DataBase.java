@@ -1,5 +1,5 @@
 
-package ec.edu.espe.foodandrollorder.utils;
+package utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -8,6 +8,9 @@ import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import ec.espe.edu.FoodAndRollOrderV.model.Manager;
+import ec.espe.edu.FoodAndRollOrderV.model.Plate;
+import ec.espe.edu.FoodAndRollOrderV.model.Voucher;
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
@@ -15,12 +18,13 @@ import org.bson.conversions.Bson;
  *
  * @author Mateo Gabriel Criollo/OOP14575/InterByte
  */
-public class DataBaseManager {
+public class DataBase {
     private static final String URI = "mongodb+srv://gabriel2004mat:1234@cluster0.dsm2nfg.mongodb.net/";
     private static final String DATABASE_NAME = "Far_DB";
     private static final String COLLECTION_NAME1 = "Manager";
     
-    
+    private static Gson gson;
+    private static Document document;
     
     public static void observeDataBase(){
         System.out.println(URI);
@@ -50,19 +54,6 @@ public class DataBaseManager {
         }
     }
     
-    
-    
-    public static MongoCollection<Document> getCollection(){
-        try {
-            MongoClient mongoClient = MongoClients.create(URI);
-            MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
-            
-            return database.getCollection(COLLECTION_NAME1);
-        } catch (MongoException | NoSuchMethodError e) {
-            System.err.println(e.getCause());
-            return null; 
-        }
-    }
     
     
     public static void saveCustomer(Object person){
@@ -96,8 +87,12 @@ public class DataBaseManager {
    
     
     
-    public static boolean findManager(String username, String password, String collection){
-        MongoCollection <Document> dataBase = getCollection(collection);
+    
+    
+    //Cosas nuevas y funcionales en la parte del programa
+    
+    public static boolean findManager(String username, String password, String nameCollection){
+        MongoCollection <Document> dataBase = getCollection(nameCollection);
         if(dataBase!=null){
             Document foundUsername =(Document) dataBase.find(new Document("userId",username)).first();
             Document foundPassword =(Document) dataBase.find(new Document("password",password)).first();
@@ -106,12 +101,12 @@ public class DataBaseManager {
         return false;
     }
     
-    public static MongoCollection<Document> getCollection(String collection){
+    public static MongoCollection<Document> getCollection(String nameCollection){
         try {
             MongoClient mongoClient = MongoClients.create(URI);
             MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
             
-            return database.getCollection(collection);
+            return database.getCollection(nameCollection);
         } catch (MongoException | NoSuchMethodError e) {
             System.err.println(e.getCause());
             return null; 
@@ -119,8 +114,63 @@ public class DataBaseManager {
     }
     
     
+    public static boolean agreggratePlate(Plate plate , String nameCollection){
+        MongoCollection <Document> dataBase = getCollection(nameCollection);
+        if(dataBase!=null){
+            gson= new GsonBuilder().create();
+            String json = gson.toJson(plate);
+            document = Document.parse(json);
+            dataBase.insertOne(document);
+            return true;
+        }
+        return false;
+    }
+    
+    public static boolean createVoucher(Voucher voucher , String nameCollection){
+        MongoCollection <Document> dataBase = getCollection(nameCollection);
+        if(dataBase!=null){
+            gson= new GsonBuilder().create();
+            String json = gson.toJson(voucher);
+            document = Document.parse(json);
+            dataBase.insertOne(document);
+            return true;
+        }
+        return false;
+    }
+   
+    public static boolean createManager(Manager manager , String nameCollection){
+        MongoCollection <Document> dataBase = getCollection(nameCollection);
+        if(dataBase!=null){
+            gson= new GsonBuilder().create();
+            String json = gson.toJson(manager);
+            document = Document.parse(json);
+            dataBase.insertOne(document);
+            return true;
+        }
+        return false;
+    }
     
     
+    
+    //aqui termina
+    
+    
+    
+    
+    
+    
+    
+    public static MongoCollection<Document> getCollection(){
+        try {
+            MongoClient mongoClient = MongoClients.create(URI);
+            MongoDatabase database = mongoClient.getDatabase(DATABASE_NAME);
+            
+            return database.getCollection(COLLECTION_NAME1);
+        } catch (MongoException | NoSuchMethodError e) {
+            System.err.println(e.getCause());
+            return null; 
+        }
+    }
     
     public static void searchCustomer(String name){
         MongoCollection <Document> collection=getCollection();
