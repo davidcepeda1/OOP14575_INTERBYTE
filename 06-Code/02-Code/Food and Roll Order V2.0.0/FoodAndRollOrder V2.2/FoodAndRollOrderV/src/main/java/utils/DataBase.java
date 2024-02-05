@@ -94,7 +94,7 @@ public class DataBase {
     public static boolean findManager(String username, String password, String nameCollection){
         MongoCollection <Document> dataBase = getCollection(nameCollection);
         if(dataBase!=null){
-            Document foundUsername =(Document) dataBase.find(new Document("userId",username)).first();
+            Document foundUsername =(Document) dataBase.find(new Document("username",username)).first();
             Document foundPassword =(Document) dataBase.find(new Document("password",password)).first();
             return foundUsername!=null && foundPassword !=null;
         }
