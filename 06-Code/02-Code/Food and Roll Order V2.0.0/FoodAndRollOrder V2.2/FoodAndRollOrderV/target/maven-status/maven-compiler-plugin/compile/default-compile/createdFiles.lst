@@ -1,5 +1,6 @@
 ec\espe\edu\FoodAndRollOrderV\controller\VoucherController.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$7.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$2.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder$2.class
@@ -16,6 +17,7 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder$3.class
 ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer$1.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager$4.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder$1.class
 utils\SettingId.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager.class

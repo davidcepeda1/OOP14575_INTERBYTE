@@ -201,7 +201,9 @@ public class FrmLoginManager extends javax.swing.JFrame {
         password = pfPassword.getText();
         
         if(ManagerController.findManager(username, password)){
-            System.out.println("Si se encontro");
+            FarRestaurantHome farRestaurantHome = new FarRestaurantHome();
+            farRestaurantHome.setVisible(true);
+            this.setVisible(false);
         }else {
             System.out.println("NO se encontro");
         }
