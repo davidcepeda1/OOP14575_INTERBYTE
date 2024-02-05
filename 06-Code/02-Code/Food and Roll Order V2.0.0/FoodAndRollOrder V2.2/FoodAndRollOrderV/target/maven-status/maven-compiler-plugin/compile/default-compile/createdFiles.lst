@@ -1,8 +1,10 @@
-ec\espe\edu\FoodAndRollOrderV\view\FrmSplash.class
 ec\espe\edu\FoodAndRollOrderV\controller\VoucherController.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$7.class
+<<<<<<< HEAD
 ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin.class
+=======
+>>>>>>> 5b8b69507b66c40af65612969f42e6e07a59c199
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$2.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder$2.class
@@ -19,9 +21,16 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder$3.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin$1.class
 ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer$1.class
+<<<<<<< HEAD
 ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder$1.class
 utils\SettingId.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder.class
+=======
+ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager$4.class
+utils\SettingId.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager.class
+>>>>>>> 5b8b69507b66c40af65612969f42e6e07a59c199
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$3.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$8.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin$4.class
