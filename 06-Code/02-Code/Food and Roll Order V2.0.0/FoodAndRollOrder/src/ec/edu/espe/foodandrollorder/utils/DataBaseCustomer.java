@@ -25,7 +25,7 @@ public class DataBaseCustomer {
     
     
     public static void observeDataBase(){
-        System.out.println(URI);
+        System.out.println(URI);    
         System.out.println(DATABASE_NAME);
         System.out.println(COLLECTION_NAME1);
     }
