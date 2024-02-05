@@ -161,7 +161,7 @@ public class FarRestaurantHome extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btmManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmManagerActionPerformed
-        FrmLoginManager frmLoginManager =new FrmLoginManager();
+        FrmLogin frmLoginManager =new FrmLogin();
         this.setVisible(false);
         frmLoginManager.setVisible(true);
     }//GEN-LAST:event_btmManagerActionPerformed
