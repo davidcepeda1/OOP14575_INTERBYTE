@@ -226,20 +226,11 @@ public class FarRestaurantHome extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-<<<<<<< HEAD
-    private void twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoActionPerformed
-=======
+                                 
     private void btmManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmManagerActionPerformed
-        FrmLogin frmLoginManager =new FrmLogin();
-        this.setVisible(false);
-        frmLoginManager.setVisible(true);
-    }//GEN-LAST:event_btmManagerActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
->>>>>>> 4628601bea9b7a8ed4fd749861f9ea3241dce9f4
-        // TODO add your handling code here:
-    }//GEN-LAST:event_twoActionPerformed
+    }//GEN-LAST:event_btmManagerActionPerformed
+            
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
      
