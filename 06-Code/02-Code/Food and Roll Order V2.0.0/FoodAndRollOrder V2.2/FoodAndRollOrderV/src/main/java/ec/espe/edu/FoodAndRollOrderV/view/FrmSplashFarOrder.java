@@ -14,7 +14,7 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
      */
     public FrmSplashFarOrder() {
         URL location = FrmSplashFarOrder.class.getResource("/Diseño sin título.png");
-System.out.println("URL: " + location);
+        System.out.println("URL: " + location);
         initComponents();
     }
 
