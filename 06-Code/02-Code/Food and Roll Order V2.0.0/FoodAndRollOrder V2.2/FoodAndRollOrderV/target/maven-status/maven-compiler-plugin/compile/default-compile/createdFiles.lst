@@ -1,3 +1,4 @@
+rsbuttom\RSButtonMetro.class
 ec\espe\edu\FoodAndRollOrderV\controller\VoucherController.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$7.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$2.class
@@ -25,6 +26,7 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager$1.class
 utils\DataBase.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager$3.class
 ec\espe\edu\FoodAndRollOrderV\model\MenuOfRestaurant.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer$2.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$6.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder$1.class
 ec\espe\edu\FoodAndRollOrderV\model\Review.class
