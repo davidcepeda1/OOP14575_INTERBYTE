@@ -1,3 +1,54 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmAdministrator.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Manager.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\FoodAndRoollSystem.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Customer.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\User.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\ShoppingCart.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Voucher.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\utils\DataBase.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\ManagerController.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\MenuOfRestaurant.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Plate.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\utils\SettingId.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Chef.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\PlateController.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Review.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmLoginManager.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\rsbuttom\RSButtonMetro.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\VoucherController.java
+C:\Users\David\Documents\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome.java
+=======
+<<<<<<< HEAD
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\VoucherController.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmAdministrator.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\utils\SettingId.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\utils\DataBase.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Chef.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Review.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Manager.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Voucher.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmCustomerOrder.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmLogin.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Customer.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Plate.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmCustomer.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\ManagerController.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\controller\PlateController.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\User.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\ShoppingCart.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\FoodAndRoollSystem.java
+C:\Users\jagui\Desktop\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\MenuOfRestaurant.java
+=======
+>>>>>>> adc5eb7ecb8854ce18e4d7daef8fd9715db02785
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Customer.java
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\Review.java
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator.java
@@ -20,3 +71,8 @@ C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodA
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmLogin.java
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\view\FrmAdministrator.java
 C:\Users\MSI\OOP14575_INTERBYTE\06-Code\02-Code\Food and Roll Order V2.0.0\FoodAndRollOrder V2.2\FoodAndRollOrderV\src\main\java\ec\espe\edu\FoodAndRollOrderV\model\ShoppingCart.java
+<<<<<<< HEAD
+=======
+>>>>>>> 766d2533dcdd267c1bb2f3ea393f2263f2776081
+>>>>>>> 4628601bea9b7a8ed4fd749861f9ea3241dce9f4
+>>>>>>> adc5eb7ecb8854ce18e4d7daef8fd9715db02785
