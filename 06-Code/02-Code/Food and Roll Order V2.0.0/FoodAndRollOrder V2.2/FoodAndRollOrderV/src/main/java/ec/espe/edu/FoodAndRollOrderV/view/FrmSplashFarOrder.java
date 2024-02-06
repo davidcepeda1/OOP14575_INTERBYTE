@@ -13,8 +13,13 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
      * Creates new form FrmSplashFarOrder
      */
     public FrmSplashFarOrder() {
+<<<<<<< HEAD
         URL location = FrmSplashFarOrder.class.getResource("/Diseño sin título.png");
         System.out.println("URL: " + location);
+=======
+        URL location = FrmSplashFarOrder.class.getResource("img/about.png");
+System.out.println("URL: " + location);
+>>>>>>> f59b747b15a4b631ff81a49b516c4b2f8268bb4b
         initComponents();
     }
 
@@ -46,8 +51,7 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(104, 149, 210));
         jLabel2.setText("DCCO - ESPE - INTERBYTE");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Diseño sin título.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\about.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,7 +59,6 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -67,7 +70,7 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
                                 .addComponent(pgbLoading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(51, 51, 51))))
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,8 +161,6 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
         
     }
 
-    
-    
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
