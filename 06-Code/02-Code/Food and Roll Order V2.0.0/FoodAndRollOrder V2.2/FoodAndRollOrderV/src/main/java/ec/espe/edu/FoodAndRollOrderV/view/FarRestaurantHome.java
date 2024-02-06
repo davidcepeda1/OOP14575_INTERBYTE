@@ -1,29 +1,31 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package ec.espe.edu.FoodAndRollOrderV.view;
 
-
+import Panel.CambiaPanel;
+import Panel.pnlUsuario;
+import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
- * @author Mateo Gabriel Criollo/OOP14575/InterByte
+ * @author David
  */
 public class FarRestaurantHome extends javax.swing.JFrame {
 
     /**
-     * Creates new form FarRestaurantHome
+     * Creates new form FarRestaurantSystem
      */
     public FarRestaurantHome() {
         initComponents();
+        this.setExtendedState(MAXIMIZED_BOTH);
         this.setLocationRelativeTo(this);
-        this.one.setSelected(true);
+        this.one.setSelected(true); 
+             
     }
 
-    public static void main(String[] args) {
-        // Crear y mostrar la ventana de la aplicación
-        java.awt.EventQueue.invokeLater(() -> {
-            new FarRestaurantHome().setVisible(true);
-        });
-    }
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,213 +35,301 @@ public class FarRestaurantHome extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jTextField1 = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         btnMenu = new rsbuttom.RSButtonMetro();
-        pnMenu = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        pnlMenu = new javax.swing.JPanel();
+        one = new rsbuttom.RSButtonMetro();
+        jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        three = new rsbuttom.RSButtonMetro();
         two = new rsbuttom.RSButtonMetro();
         jLabel3 = new javax.swing.JLabel();
-        one = new rsbuttom.RSButtonMetro();
-        jPanel2 = new javax.swing.JPanel();
+        three = new rsbuttom.RSButtonMetro();
+        pnlPrincipal = new javax.swing.JPanel();
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("jRadioButtonMenuItem1");
-
-        jTextField1.setText("jTextField1");
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
 
         btnMenu.setBackground(new java.awt.Color(255, 153, 153));
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu.png"))); // NOI18N
-        btnMenu.setColorHover(new java.awt.Color(255, 153, 153));
+        btnMenu.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\menu.png")); // NOI18N
         btnMenu.setColorNormal(new java.awt.Color(255, 153, 153));
-        btnMenu.setColorPressed(new java.awt.Color(255, 153, 153));
         btnMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMenuActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(676, Short.MAX_VALUE))
+                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(940, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
 
-        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 730, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 60));
 
-        pnMenu.setBackground(new java.awt.Color(214, 217, 223));
+        pnlMenu.setForeground(new java.awt.Color(242, 242, 242));
+        pnlMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(214, 217, 223));
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("ORDERS");
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setText("FOOD AND ROLL");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(12, 12, 12))
-        );
-
-        three.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/web.png"))); // NOI18N
-        three.setText("INFO");
-        three.setColorHover(new java.awt.Color(166, 166, 166));
-        three.setColorNormal(new java.awt.Color(214, 217, 223));
-        three.setColorPressed(new java.awt.Color(214, 217, 223));
-        three.setColorTextHover(new java.awt.Color(128, 128, 131));
-        three.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        three.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        three.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        three.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        three.setIconTextGap(25);
-
-        two.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/chef.png"))); // NOI18N
-        two.setText("CHEF");
-        two.setColorHover(new java.awt.Color(166, 166, 166));
-        two.setColorNormal(new java.awt.Color(214, 217, 223));
-        two.setColorPressed(new java.awt.Color(214, 217, 223));
-        two.setColorTextHover(new java.awt.Color(128, 128, 131));
-        two.setColorTextNormal(new java.awt.Color(128, 128, 131));
-        two.setColorTextPressed(new java.awt.Color(128, 128, 131));
-        two.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        two.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        two.setIconTextGap(25);
-        two.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                twoActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("SOBRE NOSOTROS");
-
-        one.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/customer.png"))); // NOI18N
-        one.setText("CLIENTES");
-        one.setColorHover(new java.awt.Color(166, 166, 166));
+        one.setBackground(new java.awt.Color(214, 217, 223));
+        one.setForeground(new java.awt.Color(128, 128, 131));
+        one.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\customer.png")); // NOI18N
+        one.setText("CLIENTE");
+        one.setColorHover(new java.awt.Color(204, 204, 204));
         one.setColorNormal(new java.awt.Color(214, 217, 223));
-        one.setColorPressed(new java.awt.Color(214, 217, 223));
+        one.setColorPressed(new java.awt.Color(204, 204, 204));
         one.setColorTextHover(new java.awt.Color(128, 128, 131));
         one.setColorTextNormal(new java.awt.Color(128, 128, 131));
         one.setColorTextPressed(new java.awt.Color(128, 128, 131));
         one.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         one.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         one.setIconTextGap(25);
+        one.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                oneMousePressed(evt);
+            }
+        });
+        one.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oneActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(one, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 170, -1));
 
-        javax.swing.GroupLayout pnMenuLayout = new javax.swing.GroupLayout(pnMenu);
-        pnMenu.setLayout(pnMenuLayout);
-        pnMenuLayout.setHorizontalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(pnMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(three, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(two, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(one, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        pnMenuLayout.setVerticalGroup(
-            pnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnMenuLayout.createSequentialGroup()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(one, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(two, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(three, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 44, Short.MAX_VALUE))
-        );
+        jPanel5.setForeground(new java.awt.Color(242, 242, 242));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.add(pnMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 170, 360));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("FOOD AND ROLL");
+        jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 360, Short.MAX_VALUE)
-        );
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("ORDERS");
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
 
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 560, 360));
+        pnlMenu.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 173, -1));
+
+        two.setBackground(new java.awt.Color(214, 217, 223));
+        two.setForeground(new java.awt.Color(128, 128, 131));
+        two.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\chef.png")); // NOI18N
+        two.setText("CHEF");
+        two.setColorBorde(new javax.swing.border.MatteBorder(null));
+        two.setColorHover(new java.awt.Color(204, 204, 204));
+        two.setColorNormal(new java.awt.Color(214, 217, 223));
+        two.setColorPressed(new java.awt.Color(204, 204, 204));
+        two.setColorTextHover(new java.awt.Color(128, 128, 131));
+        two.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        two.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        two.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        two.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        two.setIconTextGap(25);
+        two.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                twoMousePressed(evt);
+            }
+        });
+        two.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                twoActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(two, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 170, 51));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("SOBRE NOSOTROS");
+        pnlMenu.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        three.setBackground(new java.awt.Color(214, 217, 223));
+        three.setForeground(new java.awt.Color(128, 128, 131));
+        three.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\collection.png")); // NOI18N
+        three.setText("INFO");
+        three.setColorBorde(new javax.swing.border.MatteBorder(null));
+        three.setColorHover(new java.awt.Color(204, 204, 204));
+        three.setColorNormal(new java.awt.Color(214, 217, 223));
+        three.setColorPressed(new java.awt.Color(204, 204, 204));
+        three.setColorTextHover(new java.awt.Color(128, 128, 131));
+        three.setColorTextNormal(new java.awt.Color(128, 128, 131));
+        three.setColorTextPressed(new java.awt.Color(128, 128, 131));
+        three.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        three.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        three.setIconTextGap(25);
+        three.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                threeMousePressed(evt);
+            }
+        });
+        three.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                threeActionPerformed(evt);
+            }
+        });
+        pnlMenu.add(three, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 160, -1));
+
+        jPanel1.add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 220, 460));
+
+        pnlPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPrincipal.setForeground(new java.awt.Color(255, 255, 255));
+        pnlPrincipal.setLayout(new javax.swing.BoxLayout(pnlPrincipal, javax.swing.BoxLayout.LINE_AXIS));
+        jPanel1.add(pnlPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 780, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-                                 
-    private void btmManagerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmManagerActionPerformed
-
-    }//GEN-LAST:event_btmManagerActionPerformed
-            
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-     
+        int position = this.pnlMenu.getX();
+        if(position > -1){
+            Animacion.Animacion.mover_izquierda(0, -230, 2, 2, pnlMenu);
+        }else{
+            Animacion.Animacion.mover_derecha(-230, 0, 2, 2, pnlMenu);
+        }
     }//GEN-LAST:event_btnMenuActionPerformed
 
+    private void oneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oneActionPerformed
+        if(this.one.isSelected()){
+            this.one.setColorNormal(new Color(204,204,204));
+            this.one.setColorHover(new Color(204,204,204));
+            this.one.setColorPressed(new Color(204,204,204));
+            
+            this.two.setColorNormal(new Color(239,238,244));
+            this.two.setColorHover(new Color(204,204,204));
+            this.two.setColorPressed(new Color(204,204,204));
+            
+            this.three.setColorNormal(new Color(239,238,244));
+            this.three.setColorHover(new Color(204,204,204));
+            this.three.setColorPressed(new Color(204,204,204));
+        }else{
+            this.one.setColorNormal(new Color(239,238,244));
+            this.one.setColorHover(new Color(204,204,204));
+            this.one.setColorPressed(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_oneActionPerformed
+
     
-    
-    
- 
+    private void twoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_twoActionPerformed
+        if(this.two.isSelected()){
+            this.two.setColorNormal(new Color(204,204,204));
+            this.two.setColorHover(new Color(204,204,204));
+            this.two.setColorPressed(new Color(204,204,204));
+            
+            this.one.setColorNormal(new Color(239,238,244));
+            this.one.setColorHover(new Color(204,204,204));
+            this.one.setColorPressed(new Color(204,204,204));
+            
+            this.three.setColorNormal(new Color(239,238,244));
+            this.three.setColorHover(new Color(204,204,204));
+            this.three.setColorPressed(new Color(204,204,204));
+        }else{
+            this.two.setColorNormal(new Color(239,238,244));
+            this.two.setColorHover(new Color(204,204,204));
+            this.two.setColorPressed(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_twoActionPerformed
+   
+    private void threeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_threeActionPerformed
+        if(this.three.isSelected()){
+            this.three.setColorNormal(new Color(204,204,204));
+            this.three.setColorHover(new Color(204,204,204));
+            this.three.setColorPressed(new Color(204,204,204));
+            
+            this.one.setColorNormal(new Color(239,238,244));
+            this.one.setColorHover(new Color(204,204,204));
+            this.one.setColorPressed(new Color(204,204,204));
+            
+            this.two.setColorNormal(new Color(239,238,244));
+            this.two.setColorHover(new Color(204,204,204));
+            this.two.setColorPressed(new Color(204,204,204));
+        }else{
+            this.three.setColorNormal(new Color(239,238,244));
+            this.three.setColorHover(new Color(204,204,204));
+            this.three.setColorPressed(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_threeActionPerformed
+
+    private void oneMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oneMousePressed
+        this.one.setSelected(true);
+        this.two.setSelected(false);
+        this.three.setSelected(false);
+    }//GEN-LAST:event_oneMousePressed
+
+    private void twoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_twoMousePressed
+        this.one.setSelected(false);
+        this.two.setSelected(true);
+        this.three.setSelected(false);
+    }//GEN-LAST:event_twoMousePressed
+
+    private void threeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_threeMousePressed
+        this.one.setSelected(false);
+        this.two.setSelected(false);
+        this.three.setSelected(true);
+    }//GEN-LAST:event_threeMousePressed
+                        
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(FarRestaurantHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(FarRestaurantHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(FarRestaurantHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(FarRestaurantHome.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new FarRestaurantHome().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private rsbuttom.RSButtonMetro btnMenu;
@@ -248,12 +338,12 @@ public class FarRestaurantHome extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private rsbuttom.RSButtonMetro one;
-    private javax.swing.JPanel pnMenu;
+    private javax.swing.JPanel pnlMenu;
+    private javax.swing.JPanel pnlPrincipal;
     private rsbuttom.RSButtonMetro three;
     private rsbuttom.RSButtonMetro two;
     // End of variables declaration//GEN-END:variables
