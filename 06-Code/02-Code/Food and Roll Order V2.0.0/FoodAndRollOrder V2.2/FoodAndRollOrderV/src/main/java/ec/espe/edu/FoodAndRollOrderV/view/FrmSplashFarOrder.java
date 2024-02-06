@@ -13,8 +13,13 @@ public class FrmSplashFarOrder extends javax.swing.JFrame {
      * Creates new form FrmSplashFarOrder
      */
     public FrmSplashFarOrder() {
+<<<<<<< HEAD
+        URL location = FrmSplashFarOrder.class.getResource("/Diseño sin título.png");
+        System.out.println("URL: " + location);
+=======
         URL location = FrmSplashFarOrder.class.getResource("img/about.png");
 System.out.println("URL: " + location);
+>>>>>>> f59b747b15a4b631ff81a49b516c4b2f8268bb4b
         initComponents();
     }
 
