@@ -95,10 +95,9 @@ public class FrmCustomerOrder extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        itmHome = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -265,19 +264,16 @@ public class FrmCustomerOrder extends javax.swing.JFrame {
 
         jMenu1.setText("Customer");
 
-        jMenu3.setText("Principal");
-        jMenu1.add(jMenu3);
-
-        jMenu4.setText("Home");
-        jMenu1.add(jMenu4);
+        itmHome.setText("Home");
+        jMenu1.add(itmHome);
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Realizar orden");
-        jMenuBar1.add(jMenu2);
-
         jMenu5.setText("Consultar Orden");
         jMenuBar1.add(jMenu5);
+
+        jMenu2.setText("Realizar orden");
+        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -557,6 +553,7 @@ public class FrmCustomerOrder extends javax.swing.JFrame {
     private javax.swing.JTable TblOrder;
     private javax.swing.JButton btmAgreggate;
     private javax.swing.JComboBox<String> cmbPlate;
+    private javax.swing.JMenu itmHome;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -570,8 +567,6 @@ public class FrmCustomerOrder extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;

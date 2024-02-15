@@ -9,7 +9,6 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$5.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin$3.class
 ec\espe\edu\FoodAndRollOrderV\model\Chef.class
 ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome$1.class
-ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome$8.class
 ec\espe\edu\FoodAndRollOrderV\model\ShoppingCart.class
 Panel\pnlUsuario.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmSplashFarOrder$1.class
@@ -21,6 +20,7 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmRegister$4.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmRegister$7.class
 Panel\FrmCustomerOrder$1.class
 utils\DataBase.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmAdministrator$2.class
 ec\espe\edu\FoodAndRollOrderV\controller\ManagerController.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$1.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$4.class
@@ -42,7 +42,6 @@ Panel\pnlUsuario$1.class
 ec\espe\edu\FoodAndRollOrderV\model\Manager.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmRegister$5.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmAdministrator$1.class
-ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome$6.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin$1.class
 ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome.class
 Panel\CambiaPanel.class
@@ -52,7 +51,6 @@ ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$3.class
 ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome$4.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmRegister$2.class
 Panel\FrmCustomer.class
-ec\espe\edu\FoodAndRollOrderV\view\FarRestaurantHome$7.class
 ec\espe\edu\FoodAndRollOrderV\model\MenuOfRestaurant.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$6.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmRegister$6.class
@@ -62,3 +60,4 @@ ec\espe\edu\FoodAndRollOrderV\model\FoodAndRoollSystem.class
 ec\espe\edu\FoodAndRollOrderV\model\Plate.class
 ec\espe\edu\FoodAndRollOrderV\model\User.class
 ec\espe\edu\FoodAndRollOrderV\view\FrmLogin$2.class
+ec\espe\edu\FoodAndRollOrderV\view\FrmPlateAdministrator$9.class

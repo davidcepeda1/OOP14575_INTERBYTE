@@ -51,7 +51,7 @@ System.out.println("URL: " + location);
         jLabel2.setForeground(new java.awt.Color(104, 149, 210));
         jLabel2.setText("DCCO - ESPE - INTERBYTE");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\David\\Pictures\\Recursos\\about.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/about.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

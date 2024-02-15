@@ -56,7 +56,7 @@ public class FrmPlateAdministrator extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        itmPrincipal = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
@@ -205,8 +205,13 @@ public class FrmPlateAdministrator extends javax.swing.JFrame {
 
         jMenu1.setText("Administracion");
 
-        jMenuItem1.setText("Principal");
-        jMenu1.add(jMenuItem1);
+        itmPrincipal.setText("Principal");
+        itmPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmPrincipalActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itmPrincipal);
 
         jMenu4.setText("Desconectarse");
         jMenu1.add(jMenu4);
@@ -330,6 +335,12 @@ public class FrmPlateAdministrator extends javax.swing.JFrame {
        showPlate();
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void itmPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmPrincipalActionPerformed
+        FarRestaurantHome farRestaurantHome = new FarRestaurantHome();
+        this.setVisible(false);
+        farRestaurantHome.setVisible(true);
+    }//GEN-LAST:event_itmPrincipalActionPerformed
+
     public void showPlate(){
         String[] title = {"Id","Descripcion","Precio", "Tipo"};
         String[] register = new String[4];
@@ -394,6 +405,7 @@ public class FrmPlateAdministrator extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cmbType;
+    private javax.swing.JMenuItem itmPrincipal;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -410,7 +422,6 @@ public class FrmPlateAdministrator extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
