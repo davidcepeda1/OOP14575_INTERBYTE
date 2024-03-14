@@ -1,6 +1,33 @@
+<<<<<<< HEAD
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder/nbproject/private/
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder/build/
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder/dist/
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder V2.1/build/
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder V2.1/dist/
 /06-Code/02-Code/Food and Roll Order V2.0.0/FoodAndRollOrder V2.1/nbproject/private/
+=======
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+replay_pid*
+>>>>>>> 781eb0db5dd84467eb19c530150c5970da479860
